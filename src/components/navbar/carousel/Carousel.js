@@ -5,10 +5,12 @@ import {
 } from "../../icons/Icons";
 
 const Carousel = ({ IMAGES }) => {
-    const listRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const timeoutRef = useRef(null);
+    const listRef = useRef(null);
+    let delay = 2500;
     useEffect(() => {
-        let timeid = setTimeout(() => {
+        timeoutRef.current = setTimeout(() => {
             const listNode = listRef.current;
             const imgNode = listNode.querySelectorAll("img")[currentIndex];
             imgNode.scrollIntoView({
@@ -16,11 +18,13 @@ const Carousel = ({ IMAGES }) => {
                 block: "nearest",
                 inline: "center",
             });
-            handleNext();
+            setCurrentIndex((idx) => {
+                return idx + 1 === IMAGES.length ? 0 : idx + 1;
+            });
             return () => {
-                clearTimeout(timeid);
+                clearTimeout(timeoutRef.current);
             };
-        }, 3000);
+        }, delay);
     }, [currentIndex]);
     const handleNext = () => {
         setCurrentIndex((idx) => {
@@ -35,21 +39,20 @@ const Carousel = ({ IMAGES }) => {
     };
     return (
         <>
-            <div
-                className="flex justify-center h-max overflow-hidden"
-                ref={listRef}
-            >
-                {IMAGES.map((img) => {
-                    return (
-                        <>
-                            <img
-                                key={currentIndex}
-                                src={img}
-                                className="w-[600px] border border-gray-500"
-                            />
-                        </>
-                    );
-                })}
+            <div className="slideshow overflow-hidden">
+                <div
+                    className="slideshowSlider whitespace-nowrap transition-transform duration-1000 ease-in-out"
+                    ref={listRef}
+                >
+                    {IMAGES.map((url, index) => (
+                        <img
+                            key={index}
+                            src={url}
+                            className="w-[600px] inline-block border border-
+                        gray-500 z-50"
+                        />
+                    ))}
+                </div>
             </div>
             <div>
                 <EvaArrowCircleLeftOutline
