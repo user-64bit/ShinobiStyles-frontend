@@ -9,23 +9,23 @@ const Carousel = ({ IMAGES }) => {
     const timeoutRef = useRef(null);
     const listRef = useRef(null);
     let delay = 2500;
-    useEffect(() => {
-        timeoutRef.current = setTimeout(() => {
-            const listNode = listRef.current;
-            const imgNode = listNode.querySelectorAll("img")[currentIndex];
-            imgNode.scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center",
-            });
-            setCurrentIndex((idx) => {
-                return idx + 1 === IMAGES.length ? 0 : idx + 1;
-            });
-            return () => {
-                clearTimeout(timeoutRef.current);
-            };
-        }, delay);
-    }, [currentIndex]);
+    // useEffect(() => {
+    //     timeoutRef.current = setTimeout(() => {
+    //         const listNode = listRef.current;
+    //         const imgNode = listNode.querySelectorAll("img")[currentIndex];
+    //         imgNode.scrollIntoView({
+    //             behavior: "smooth",
+    //             block: "nearest",
+    //             inline: "center",
+    //         });
+    //         setCurrentIndex((idx) => {
+    //             return idx + 1 === IMAGES.length ? 0 : idx + 1;
+    //         });
+    //         return () => {
+    //             clearTimeout(timeoutRef.current);
+    //         };
+    //     }, delay);
+    // }, [currentIndex]);
     const handleNext = () => {
         setCurrentIndex((idx) => {
             return idx + 1 === IMAGES.length ? 0 : idx + 1;
@@ -39,30 +39,43 @@ const Carousel = ({ IMAGES }) => {
     };
     return (
         <>
-            <div className="slideshow overflow-hidden">
-                <div
-                    className="slideshowSlider whitespace-nowrap transition-transform duration-1000 ease-in-out"
-                    ref={listRef}
-                >
-                    {IMAGES.map((url, index) => (
-                        <img
-                            key={index}
-                            src={url}
-                            className="w-[600px] inline-block border border-
-                        gray-500 z-50"
-                        />
-                    ))}
+            <div className="overflow-hidden">
+                <article className="flex w-[200%] animate-slider">
+                    <div className="w-[100%]">
+                        <ul className="flex">
+                            {IMAGES.map((url, idx) => {
+                                return (
+                                    <li className="w-[100%]" key={url + idx}>
+                                        <img src={url} className="w-[600px]" />
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className="w-[100%]">
+                        <ul className="flex">
+                            {IMAGES.map((url, idx) => {
+                                return (
+                                    <li className="w-[100%]" key={url + idx}>
+                                        <img src={url} className="w-[600px]" />
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                </article>
+                <div className="">
+                    {" "}
+                    {/* Centered container */}
+                    <EvaArrowCircleLeftOutline
+                        className="text-4xl absolute top-1/2 cursor-pointer"
+                        onClick={handlePrev}
+                    />
+                    <EvaArrowCircleRightOutline
+                        className="text-4xl absolute top-1/2 right-0 cursor-pointer"
+                        onClick={handleNext}
+                    />
                 </div>
-            </div>
-            <div>
-                <EvaArrowCircleLeftOutline
-                    className="text-3xl"
-                    onClick={handlePrev}
-                />
-                <EvaArrowCircleRightOutline
-                    className="text-3xl float-right clear-both"
-                    onClick={handleNext}
-                />
             </div>
         </>
     );

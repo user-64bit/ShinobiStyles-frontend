@@ -10,12 +10,20 @@ const Navbar = () => {
         <>
             <div>
                 <Carousel IMAGES={IMAGES} />
-                <div className="absolute top-24 left-1/2 transform -translate-x-1/2 flex justify-between w-[80%] mx-auto">
+                <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex justify-between w-[80%] mx-auto">
                     <div className="flex">
                         {/* Top Categories */}
                         <Dropdown
                             navTitle={"Top Categories"}
-                            navItems={["A", "B", "C", "D"]}
+                            navItems={[
+                                "Hoodies/Jackets",
+                                "Oversized Tees",
+                                "Shirts",
+                                "Manga",
+                                "Sticker",
+                                "Wall Decor",
+                                "Cosplay",
+                            ]}
                             downArrow={true}
                         />
 
@@ -34,8 +42,16 @@ const Navbar = () => {
                         />
                     </div>
 
-                    <div className="w-64">
-                        <img src={logo} alt="Shinobi Styles" />
+                    <div className="w-80">
+                        <img
+                            src={logo}
+                            alt="Shinobi Styles"
+                            className="relative -top-10"
+                            style={{
+                                WebkitFilter: "grayscale(1) invert(1)",
+                                filter: "grayscale(1) invert(1)",
+                            }}
+                        />
                     </div>
                     <div className="">
                         <Search />
