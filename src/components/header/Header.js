@@ -13,9 +13,15 @@ const Header = () => {
             {/* <div className="fixed w-full"> */}
             <div className="flex justify-between bg-[#172d3b] p-3">
                 <div className="flex">
-                    <AkarIconsDiscordFill className="me-2 text-md" />
-                    <CibInstagram className="me-2 text-md" />
-                    <DeviconTwitter className="text-md" />
+                    <a href="https://discord.com" target="_blank">
+                        <AkarIconsDiscordFill className="me-2 text-md cursor-pointer" />
+                    </a>
+                    <a href="https://instagram.com" target="_blank">
+                        <CibInstagram className="me-2 text-md cursor-pointer" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank">
+                        <DeviconTwitter className="text-md cursor-pointer" />
+                    </a>
                 </div>
 
                 {/* Floating Text about Discounts (maybe) */}

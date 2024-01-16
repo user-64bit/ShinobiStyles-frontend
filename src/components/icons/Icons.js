@@ -111,3 +111,82 @@ export const TdesignCartAdd = (props) => (
         ></path>
     </svg>
 );
+export const BxUser = (props) => (
+    <svg
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+    >
+        <path
+            fill="#000000"
+            d="M12 2a5 5 0 1 0 5 5a5 5 0 0 0-5-5m0 8a3 3 0 1 1 3-3a3 3 0 0 1-3 3m9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"
+        ></path>
+    </svg>
+);
+export const BytesizeHeart = (props) => (
+    <>
+        <div className="relative">
+            {props?.loveditems > 0 ? (
+                <div className="absolute left-6 -top-2">
+                    <p className="flex h-2 w-2 items-center justify-center rounded-full text-sm bg-blue-500 p-2 text-white">
+                        {props?.loveditems}
+                    </p>
+                </div>
+            ) : (
+                ""
+            )}
+            <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                {...props}
+            >
+                <path
+                    fill="none"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 16C1 12 2 6 7 4s8 2 9 4c1-2 5-6 10-4s5 8 2 12s-12 12-12 12s-9-8-12-12"
+                ></path>
+            </svg>
+        </div>
+    </>
+);
+export const BytesizeCart = (props) => (
+    <>
+        <div className="relative">
+            {props?.cartitems > 0 ? (
+                <div className="absolute left-6 -top-2">
+                    <p className="flex h-2 w-2 items-center justify-center rounded-full text-sm bg-blue-500 p-2 text-white">
+                        {props?.cartitems}
+                    </p>
+                </div>
+            ) : (
+                ""
+            )}
+            <svg
+                width="1em"
+                height="1em"
+                viewBox="0 0 32 32"
+                xmlns="http://www.w3.org/2000/svg"
+                {...props}
+            >
+                <g
+                    fill="none"
+                    stroke="#000000"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                >
+                    <path d="M6 6h24l-3 13H9m18 4H10L5 2H2"></path>
+                    <circle cx="25" cy="27" r="2"></circle>
+                    <circle cx="12" cy="27" r="2"></circle>
+                </g>
+            </svg>
+        </div>
+    </>
+);

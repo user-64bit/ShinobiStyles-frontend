@@ -4,8 +4,15 @@ import logo from "../../assets/logo.png";
 import Search from "./search/Search";
 import { IMAGES } from "../../config";
 import Carousel from "./carousel/Carousel";
+import { BxUser, BytesizeCart, BytesizeHeart } from "../icons/Icons";
+import { useSelector } from "react-redux";
+const reverseColour = {
+    WebkitFilter: "grayscale(1) invert(1)",
+    filter: "grayscale(1) invert(1)",
+};
 
 const Navbar = () => {
+    const cartitems = useSelector((store) => store.cart.items);
     return (
         <>
             <div>
@@ -47,14 +54,25 @@ const Navbar = () => {
                             src={logo}
                             alt="Shinobi Styles"
                             className="relative -top-10"
-                            style={{
-                                WebkitFilter: "grayscale(1) invert(1)",
-                                filter: "grayscale(1) invert(1)",
-                            }}
+                            style={reverseColour}
                         />
                     </div>
-                    <div className="">
+                    <div className="flex">
                         <Search />
+                        <BxUser
+                            className="ms-2 cursor-pointer text-2xl"
+                            style={reverseColour}
+                        />
+                        <BytesizeHeart
+                            className="ms-2 cursor-pointer text-2xl"
+                            style={reverseColour}
+                            loveditems={3}
+                        />
+                        <BytesizeCart
+                            className="ms-2 cursor-pointer text-2xl"
+                            style={reverseColour}
+                            cartitems={cartitems?.length}
+                        />
                     </div>
                 </div>
             </div>

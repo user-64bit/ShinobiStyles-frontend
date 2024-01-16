@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
+import CardShimmer from "./CardShimmer";
 
 const AllCards = () => {
     // Backup Function if API Fucked up
     const FetchBackupData = () => {
         // Here I'll get data from Data (directory) to put some on Website if fetch failed...
         // (so site will never fucked up *maybe*)
+        // Create Custom Hook for fetching data from direcotry....
         return [];
     };
     const [allCards, setAllCards] = useState(FetchBackupData);
@@ -33,7 +35,7 @@ const AllCards = () => {
     return (
         <>
             {loading ? (
-                <div>isLoading...</div>
+                <CardShimmer />
             ) : (
                 <>
                     <h1 className="py-20 text-center text-4xl font-bold">
