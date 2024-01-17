@@ -26,6 +26,10 @@ const Carousel = ({ IMAGES }) => {
     //         };
     //     }, delay);
     // }, [currentIndex]);
+
+    /*
+    No Functionality Works here... There is only Animatin of Image
+    */
     const handleNext = () => {
         setCurrentIndex((idx) => {
             return idx + 1 === IMAGES.length ? 0 : idx + 1;

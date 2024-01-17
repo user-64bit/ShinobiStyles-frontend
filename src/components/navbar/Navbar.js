@@ -13,6 +13,7 @@ const reverseColour = {
 
 const Navbar = () => {
     const cartitems = useSelector((store) => store.cart.items);
+    const wishlistItems = useSelector((store) => store.wishlist.items);
     return (
         <>
             <div>
@@ -66,7 +67,7 @@ const Navbar = () => {
                         <BytesizeHeart
                             className="ms-2 cursor-pointer text-2xl"
                             style={reverseColour}
-                            loveditems={3}
+                            loveditems={wishlistItems?.length}
                         />
                         <BytesizeCart
                             className="ms-2 cursor-pointer text-2xl"
