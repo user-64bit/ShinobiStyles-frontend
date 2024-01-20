@@ -11,7 +11,7 @@ const reverseColour = {
     filter: "grayscale(1) invert(1)",
 };
 
-const Navbar = () => {
+const Navbar = ({ allCards }) => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
     return (
@@ -59,7 +59,7 @@ const Navbar = () => {
                         />
                     </div>
                     <div className="flex">
-                        <Search />
+                        <Search data={allCards} />
                         <BxUser
                             className="ms-2 cursor-pointer text-2xl"
                             style={reverseColour}

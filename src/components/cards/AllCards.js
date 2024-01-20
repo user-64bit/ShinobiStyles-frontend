@@ -1,53 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Card from "./Card";
-import CardShimmer from "./CardShimmer";
 
-const AllCards = () => {
-    // Backup Function if API Fucked up
-    const FetchBackupData = () => {
-        // Here I'll get data from Data (directory) to put some on Website if fetch failed...
-        // (so site will never fucked up *maybe*)
-        // Create Custom Hook for fetching data from direcotry....
-        return [];
-    };
-    const [allCards, setAllCards] = useState(FetchBackupData);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(
-                    "https://fakestoreapi.com/products"
-                );
-                const data = await response.json();
-                setAllCards(data);
-            } catch (error) {
-                console.log("Error fetching data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    // console.log(allCards);
+const AllCards = ({ allCards }) => {
     return (
         <>
-            {loading ? (
-                <CardShimmer />
-            ) : (
-                <>
-                    <h1 className="py-20 text-center text-4xl font-bold">
-                        LATEST DROPS
-                    </h1>
-                    <div className="flex flex-wrap justify-between w-[80%] mx-auto">
-                        {allCards.map((data) => {
-                            return <Card data={data} key={data.id} />;
-                        })}
-                    </div>
-                </>
-            )}
+            <h1 className="py-20 text-center text-4xl font-bold">
+                LATEST DROPS
+            </h1>
+            <div className="flex flex-wrap justify-between w-[80%] mx-auto">
+                {allCards.map((data) => {
+                    return <Card data={data} key={data.id} />;
+                })}
+            </div>
         </>
     );
 };
