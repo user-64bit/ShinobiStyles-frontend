@@ -127,7 +127,7 @@ export const BxUser = (props) => (
 );
 export const BytesizeHeart = (props) => (
     <>
-        <div className="relative">
+        <div className="relative group transition-all ease-in-out">
             {props?.loveditems > 0 ? (
                 <div className="absolute left-6 -top-2">
                     <p className="flex h-2 w-2 items-center justify-center rounded-full text-sm bg-blue-500 p-2 text-white">
@@ -146,7 +146,8 @@ export const BytesizeHeart = (props) => (
             >
                 <path
                     fill="none"
-                    stroke="#FF0000"
+                    stroke="#000000"
+                    className="group-hover:stroke-red-600"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth="2"

@@ -1,446 +1,615 @@
 [
     {
-        "id": 1,
-        "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-        "price": 109.95,
-        "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-        "category": "men's clothing",
-        "image":"",
+        "_id": "65ae22a51fc9543c5e9a682b",
+        "title": "Mikasa Ackerman Poster",
+        "price": 1599,
+        "description": {
+            "material": "High-quality paper",
+            "size": "24x36 inches"
+        },
+        "category": "Poster",
+        "tags": [
+            "Mikasa",
+            "Attack on Titan",
+            "Poster",
+            "Anime Art"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2022/11/yutaezgif.com-gif-maker.webp",
         "rating": {
-            "rate": 3.9,
-            "count": 120
+            "rate": 4.9,
+            "count": 600
         }
     },
     {
-        "id": 2,
-        "title": "Mens Casual Premium Slim Fit T-Shirts ",
-        "price": 22.3,
-        "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
-        "category": "men's clothing",
-        "image":"",
-        "rating": {
-            "rate": 4.1,
-            "count": 259
-        }
-    },
-    {
-        "id": 3,
-        "title": "Mens Cotton Jacket",
-        "price": 55.99,
-        "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
-        "category": "men's clothing",
-        "image":"",
-        "rating": {
-            "rate": 4.7,
-            "count": 500
-        }
-    },
-    {
-        "id": 4,
-        "title": "Mens Casual Slim Fit",
-        "price": 15.99,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "men's clothing",
-        "image":"",
-        "rating": {
-            "rate": 2.1,
-            "count": 430
-        }
-    },
-    {
-        "id": 5,
-        "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
-        "price": 695,
-        "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
-        "category": "jewelery",
-        "image":"",
+        "_id": "65ae22e51fc9543c5e9a682c",
+        "title": "Vegeta Saiyan Armor Backpack",
+        "price": 1899,
+        "description": {
+            "material": "Durable polyester",
+            "features": [
+                "Multiple compartments",
+                "Adjustable shoulder straps"
+            ]
+        },
+        "category": "Backpack",
+        "tags": [
+            "Vegeta",
+            "Dragon Ball Z",
+            "Backpack",
+            "Saiyan"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2022/12/brahman_hoodie_1-2.webp",
         "rating": {
             "rate": 4.6,
             "count": 400
         }
     },
     {
-        "id": 6,
-        "title": "Solid Gold Petite Micropave ",
-        "price": 168,
-        "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-        "category": "jewelery",
-        "image":"",
-        "rating": {
-            "rate": 3.9,
-            "count": 70
-        }
-    },
-    {
-        "id": 7,
-        "title": "White Gold Plated Princess",
-        "price": 9.99,
-        "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-        "category": "jewelery",
-        "image":"",
-        "rating": {
-            "rate": 3,
-            "count": 400
-        }
-    },
-    {
-        "id": 8,
-        "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
-        "price": 10.99,
-        "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
-        "category": "jewelery",
-        "image":"",
-        "rating": {
-            "rate": 1.9,
-            "count": 100
-        }
-    },
-    {
-        "id": 9,
-        "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
-        "price": 64,
-        "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 3.3,
-            "count": 203
-        }
-    },
-    {
-        "id": 10,
-        "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-        "price": 109,
-        "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 2.9,
-            "count": 470
-        }
-    },
-    {
-        "id": 11,
-        "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-        "price": 109,
-        "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 4.8,
-            "count": 319
-        }
-    },
-    {
-        "id": 12,
-        "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
-        "price": 114,
-        "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 4.8,
-            "count": 400
-        }
-    },
-    {
-        "id": 13,
-        "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-        "price": 599,
-        "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 2.9,
-            "count": 250
-        }
-    },
-    {
-        "id": 14,
-        "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
-        "price": 999.99,
-        "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
-        "category": "electronics",
-        "image":"",
-        "rating": {
-            "rate": 2.2,
-            "count": 140
-        }
-    },
-    {
-        "id": 15,
-        "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
-        "price": 56.99,
-        "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
-        "category": "women's clothing",
-        "image":"",
-        "rating": {
-            "rate": 2.6,
-            "count": 235
-        }
-    },
-    {
-        "id": 16,
-        "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
-        "price": 29.95,
-        "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
-        "category": "women's clothing",
-        "image":"",
-        "rating": {
-            "rate": 2.9,
-            "count": 340
-        }
-    },
-    {
-        "id": 17,
-        "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-        "price": 39.99,
-        "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-        "category": "women's clothing",
-        "image":"",
-        "rating": {
-            "rate": 3.8,
-            "count": 679
-        }
-    },
-    {
-        "id": 18,
-        "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
-        "price": 9.85,
-        "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-        "category": "women's clothing",
-        "image":"",
+        "_id": "65ae22f91fc9543c5e9a682d",
+        "title": "Sakura Cherry Blossom Blanket",
+        "price": 1799,
+        "description": {
+            "material": "Soft fleece",
+            "size": "50x60 inches"
+        },
+        "category": "Home Decor",
+        "tags": [
+            "Sakura",
+            "Cherry Blossom",
+            "Blanket",
+            "Anime Decor"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2022/11/demonslayer_hashira_hoodie_listing7_hitanshi-scaled.jpg",
         "rating": {
             "rate": 4.7,
-            "count": 130
+            "count": 550
         }
     },
     {
-        "id": 19,
-        "title": "Opna Women's Short Sleeve Moisture",
-        "price": 7.95,
-        "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
-        "category": "women's clothing",
-        "image":"",
+        "_id": "65ae230c1fc9543c5e9a682e",
+        "title": "Luffy Straw Hat Keychain",
+        "price": 799,
+        "description": {
+            "material": "Metal and enamel",
+            "size": "2 inches"
+        },
+        "category": "Keychain",
+        "tags": [
+            "Luffy",
+            "One Piece",
+            "Keychain",
+            "Pirate"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2022/12/chainsaw_front1_comicsense.jpg",
         "rating": {
             "rate": 4.5,
-            "count": 146
+            "count": 350
         }
     },
     {
-        "id": 20,
-        "title": "DANVOUY Womens T Shirt Casual Cotton Short",
-        "price": 12.99,
-        "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
-        "category": "women's clothing",
-        "image":"",
+        "_id": "65ae23221fc9543c5e9a682f",
+        "title": "Hatsune Miku Wireless Headphones",
+        "price": 3499,
+        "description": {
+            "features": [
+                "Bluetooth connectivity",
+                "Noise-canceling technology"
+            ]
+        },
+        "category": "Electronics",
+        "tags": [
+            "Hatsune Miku",
+            "Headphones",
+            "Vocaloid",
+            "Music"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2021/03/law_new_world_hood1_comicsense.jpg",
         "rating": {
-            "rate": 3.6,
-            "count": 145
+            "rate": 4.8,
+            "count": 500
         }
     },
     {
-        "id": 92,
-        "title": "newTitle",
-        "price": 50000,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
+        "_id": "65ae23351fc9543c5e9a6830",
+        "title": "Inuyasha Tote Bag",
+        "price": 1299,
+        "description": {
+            "material": "Canvas",
+            "size": "15x18 inches"
+        },
+        "category": "Bag",
+        "tags": [
+            "Inuyasha",
+            "Tote Bag",
+            "Anime Fashion"
+        ],
+        "image": "https://comicsense.b-cdn.net/storage/2023/02/one_piece_bomber6_comicsense-1.jpg",
         "rating": {
-            "rate": 4.2,
-            "count": 73
+            "rate": 4.6,
+            "count": 400
         }
     },
     {
-        "id": 93,
-        "title": "New Book E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
+        "_id": "65ae23481fc9543c5e9a6831",
+        "title": "Tokyo Ghoul Coffee Mug",
+        "price": 999,
+        "description": {
+            "material": "Ceramic",
+            "capacity": 12
+        },
+        "category": "Mug",
+        "tags": [
+            "Tokyo Ghoul",
+            "Coffee Mug",
+            "Anime Merch"
+        ],
+        "image": "https://example.com/tokyo-ghoul-mug.jpg",
         "rating": {
-            "rate": 3.8,
-            "count": 112
+            "rate": 4.7,
+            "count": 450
         }
     },
     {
-        "id": 94,
-        "title": "New Book E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
+        "_id": "65ae23581fc9543c5e9a6832",
+        "title": "Fairy Tail Throw Pillow",
+        "price": 1599,
+        "description": {
+            "material": "Soft plush",
+            "size": "18x18 inches"
+        },
+        "category": "Home Decor",
+        "tags": [
+            "Fairy Tail",
+            "Throw Pillow",
+            "Anime Decor"
+        ],
+        "image": "https://example.com/fairy-tail-pillow.jpg",
         "rating": {
-            "rate": 4.1,
-            "count": 98
+            "rate": 4.8,
+            "count": 500
         }
     },
     {
-        "id": 95,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 3.9,
-            "count": 115
-        }
-    },
-    {
-        "id": 96,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.3,
-            "count": 87
-        }
-    },
-    {
-        "id": 97,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.0,
-            "count": 104
-        }
-    },
-    {
-        "id": 98,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.5,
-            "count": 68
-        }
-    },
-    {
-        "id": 99,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 3.7,
-            "count": 129
-        }
-    },
-    {
-        "id": 100,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.2,
-            "count": 92
-        }
-    },
-    {
-        "id": 101,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 3.8,
-            "count": 107
-        }
-    },
-    {
-        "id": 102,
-        "title": "Old Book in E-Liybrary",
-        "price": 10,
-        "description": "Shop items by Sarothdesigns located in Bristol, Pennsylvania. Smooth shipping! Has a history of shipping on time with tracking.",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.4,
-            "count": 79
-        }
-    },
-    {
-        "id": 106,
-        "title": "this is title ",
-        "price": 279283,
-        "description": "this is description",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.1,
-            "count": 96
-        }
-    },
-    {
-        "id": 108,
-        "title": "this is title ",
-        "price": 230,
-        "description": "this is description",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.3,
-            "count": 82
-        }
-    },
-    {
-        "id": 109,
-        "title": "the chair",
-        "price": 232,
-        "description": "testing",
-        "category": "Furniture",
-        "image":"",
-        "rating": {
-            "rate": 3.9,
-            "count": 114
-        }
-    },
-    {
-        "id": 110,
-        "title": "qqq",
-        "price": 123,
-        "description": "zzz",
-        "category": "change",
-        "image":"",
-        "rating": {
-            "rate": 4.0,
-            "count": 103
-        }
-    },
-    {
-        "id": 111,
-        "title": "w/IPhone Pro Max",
-        "price": 1234,
-        "description": "qweqw wee a we wee we e qwe",
-        "category": "w/elctroniec",
-        "image":"",
-        "rating": {
-            "rate": 3.7,
-            "count": 126
-        }
-    },
-    {
-        "id": 112,
-        "title": "w/banners",
-        "price": 1,
-        "description": "A description",
-        "category": "cellphone",
-        "image":"",
+        "_id": "65ae23681fc9543c5e9a6833",
+        "title": "Death Note Notebook Replica",
+        "price": 1499,
+        "description": {
+            "material": "Hardcover with faux leather cover",
+            "pages": 100,
+            "size": "6x9 inches"
+        },
+        "category": "Collectible",
+        "tags": [
+            "Death Note",
+            "Notebook",
+            "Replica",
+            "Shinigami"
+        ],
+        "image": "https://example.com/death-note-replica.jpg",
         "rating": {
             "rate": 4.5,
-            "count": 70
+            "count": 350
+        }
+    },
+    {
+        "_id": "65ae237c1fc9543c5e9a6834",
+        "title": "My Hero Academia Hoodie",
+        "price": 2799,
+        "description": {
+            "material": "Cotton blend",
+            "design": "Hero costume-inspired hoodie"
+        },
+        "category": "Apparel",
+        "tags": [
+            "My Hero Academia",
+            "Hoodie",
+            "Anime Fashion",
+            "Hero"
+        ],
+        "image": "https://example.com/mha-hoodie.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 600
+        }
+    },
+    {
+        "_id": "65ae23961fc9543c5e9a6835",
+        "title": "Demon Slayer Katana Set",
+        "price": 3999,
+        "description": {
+            "material": "Stainless steel blades",
+            "includes": [
+                "Tanjiro's katana",
+                "Zenitsu's katana",
+                "Inosuke's dual blades"
+            ]
+        },
+        "category": "Collectible",
+        "tags": [
+            "Demon Slayer",
+            "Katana",
+            "Sword Set",
+            "Anime Collectible"
+        ],
+        "image": "https://example.com/demon-slayer-katana.jpg",
+        "rating": {
+            "rate": 3.2,
+            "count": 500
+        }
+    },
+    {
+        "_id": "65ae23a41fc9543c5e9a6836",
+        "title": "Neon Genesis Evangelion Poster Set",
+        "price": 1899,
+        "description": {
+            "material": "High-quality paper",
+            "set": [
+                "Eva Unit-01",
+                "Asuka Langley",
+                "Shinji Ikari"
+            ]
+        },
+        "category": "Poster",
+        "tags": [
+            "Neon Genesis Evangelion",
+            "Poster Set",
+            "Anime Art"
+        ],
+        "image": "https://example.com/evangelion-poster-set.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 450
+        }
+    },
+    {
+        "_id": "65ae23b41fc9543c5e9a6837",
+        "title": "Haikyuu!! Volleyball Jersey",
+        "price": 1699,
+        "description": {
+            "material": "Breathable polyester",
+            "team": "Karasuno High School"
+        },
+        "category": "Apparel",
+        "tags": [
+            "Haikyuu!!",
+            "Volleyball Jersey",
+            "Anime Fashion",
+            "Sports"
+        ],
+        "image": "https://example.com/haikyuu-jersey.jpg",
+        "rating": {
+            "rate": 4.6,
+            "count": 400
+        }
+    },
+    {
+        "_id": "65ae23c21fc9543c5e9a6838",
+        "title": "Black Clover Magic Grimoire Replica",
+        "price": 2599,
+        "description": {
+            "material": "Faux leather cover",
+            "size": "10x14 inches",
+            "glow": "Emits a soft magical glow"
+        },
+        "category": "Collectible",
+        "tags": [
+            "Black Clover",
+            "Grimoire",
+            "Replica",
+            "Magic"
+        ],
+        "image": "https://example.com/black-clover-grimoire.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 550
+        }
+    },
+    {
+        "_id": "65ae23d11fc9543c5e9a6839",
+        "title": "Cowboy Bebop Vinyl Record Set",
+        "price": 2999,
+        "description": {
+            "records": [
+                "Tank!",
+                "The Real Folk Blues",
+                "Space Lion"
+            ],
+            "extras": "Exclusive poster included"
+        },
+        "category": "Music",
+        "tags": [
+            "Cowboy Bebop",
+            "Vinyl Record Set",
+            "Anime Music"
+        ],
+        "image": "https://example.com/cowboy-bebop-vinyl.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 500
+        }
+    },
+    {
+        "_id": "65ae23df1fc9543c5e9a683a",
+        "title": "Jujutsu Kaisen Phone Case",
+        "price": 1299,
+        "description": {
+            "compatible": "Various phone models",
+            "material": "Durable silicone"
+        },
+        "category": "Phone Accessories",
+        "tags": [
+            "Jujutsu Kaisen",
+            "Phone Case",
+            "Anime Accessories"
+        ],
+        "image": "https://example.com/jjk-phone-case.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 450
+        }
+    },
+    {
+        "_id": "65ae23f11fc9543c5e9a683b",
+        "title": "Spirited Away Plush Set",
+        "price": 2199,
+        "description": {
+            "material": "Soft plush",
+            "set": [
+                "No-Face",
+                "Totoro",
+                "Chihiro"
+            ]
+        },
+        "category": "Plush Toys",
+        "tags": [
+            "Spirited Away",
+            "Plush Set",
+            "Studio Ghibli"
+        ],
+        "image": "https://example.com/spirited-away-plush.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 600
+        }
+    },
+    {
+        "_id": "65ae24001fc9543c5e9a683c",
+        "title": "One Piece Travel Mug",
+        "price": 1499,
+        "description": {
+            "material": "Stainless steel",
+            "capacity": 16,
+            "design": "Straw Hat Pirates emblem"
+        },
+        "category": "Drinkware",
+        "tags": [
+            "One Piece",
+            "Travel Mug",
+            "Anime Merch"
+        ],
+        "image": "https://example.com/one-piece-mug.jpg",
+        "rating": {
+            "rate": 4.6,
+            "count": 400
+        }
+    },
+    {
+        "_id": "65ae240f1fc9543c5e9a683d",
+        "title": "Fullmetal Alchemist Alphonse Elric Plush",
+        "price": 1799,
+        "description": {
+            "material": "Soft plush",
+            "size": "12 inches"
+        },
+        "category": "Plush Toys",
+        "tags": [
+            "Fullmetal Alchemist",
+            "Alphonse Elric",
+            "Plush",
+            "Anime Collectible"
+        ],
+        "image": "https://example.com/fma-alphonse-plush.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        }
+    },
+    {
+        "_id": "65ae241f1fc9543c5e9a683e",
+        "title": "Hunter x Hunter Gon Freecss Figure",
+        "price": 3499,
+        "description": {
+            "material": "High-quality PVC",
+            "height": 14,
+            "pose": "Gon's iconic battle stance"
+        },
+        "category": "Collectible",
+        "tags": [
+            "Hunter x Hunter",
+            "Gon Freecss",
+            "Figure",
+            "Anime Merch"
+        ],
+        "image": "https://example.com/hxh-gon-figure.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 600
+        }
+    },
+    {
+        "_id": "65ae242e1fc9543c5e9a683f",
+        "title": "Tokyo Revengers Manga Box Set",
+        "price": 2999,
+        "description": {
+            "volumes": 1,
+            "exclusive": "Collector's box included"
+        },
+        "category": "Books",
+        "tags": [
+            "Tokyo Revengers",
+            "Manga",
+            "Box Set",
+            "Anime Book"
+        ],
+        "image": "https://example.com/tokyo-revengers-manga.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 550
+        }
+    },
+    {
+        "_id": "65ae243b1fc9543c5e9a6840",
+        "title": "Sword Art Online Dual Blade Set",
+        "price": 4299,
+        "description": {
+            "material": "Stainless steel blades",
+            "length": 24,
+            "features": "Detachable for dual-wielding"
+        },
+        "category": "Collectible",
+        "tags": [
+            "Sword Art Online",
+            "Dual Blades",
+            "Swords",
+            "Anime Collectible"
+        ],
+        "image": "https://example.com/sao-dual-blades.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 500
+        }
+    },
+    {
+        "_id": "65ae244b1fc9543c5e9a6841",
+        "title": "Dragon Ball Z Shenron Wall Scroll",
+        "price": 1599,
+        "description": {
+            "material": "Durable fabric",
+            "size": "18x24 inches"
+        },
+        "category": "Wall Decor",
+        "tags": [
+            "Dragon Ball Z",
+            "Shenron",
+            "Wall Scroll",
+            "Anime Art"
+        ],
+        "image": "https://example.com/dbz-shenron-scroll.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 450
+        }
+    },
+    {
+        "_id": "65ae245a1fc9543c5e9a6842",
+        "title": "Mob Psycho 100 Stress Ball Set",
+        "price": 899,
+        "description": {
+            "material": "Squishy foam",
+            "set": [
+                "Mob",
+                "Reigen",
+                "Dimple"
+            ]
+        },
+        "category": "Stress Relief",
+        "tags": [
+            "Mob Psycho 100",
+            "Stress Ball",
+            "Anime Merch"
+        ],
+        "image": "https://example.com/mob-psycho-stress-ball.jpg",
+        "rating": {
+            "rate": 4.6,
+            "count": 400
+        }
+    },
+    {
+        "_id": "65ae24681fc9543c5e9a6843",
+        "title": "Re:Zero Rem and Ram Throw Blanket",
+        "price": 1999,
+        "description": {
+            "material": "Soft fleece",
+            "size": "50x60 inches"
+        },
+        "category": "Home Decor",
+        "tags": [
+            "Re:Zero",
+            "Rem",
+            "Ram",
+            "Throw Blanket"
+        ],
+        "image": "https://example.com/re-zero-blanket.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 550
+        }
+    },
+    {
+        "_id": "65ae24751fc9543c5e9a6844",
+        "title": "One Punch Man Workout Set",
+        "price": 2499,
+        "description": {
+            "includes": [
+                "Saitama's training diary",
+                "Hero workout mat",
+                "One Punch Man water bottle"
+            ]
+        },
+        "category": "Fitness",
+        "tags": [
+            "One Punch Man",
+            "Workout Set",
+            "Fitness Gear"
+        ],
+        "image": "https://example.com/one-punch-man-workout-set.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 500
+        }
+    },
+    {
+        "_id": "65ae24821fc9543c5e9a6845",
+        "title": "My Neighbor Totoro Backpack",
+        "price": 1699,
+        "description": {
+            "material": "Canvas",
+            "size": "15x20 inches"
+        },
+        "category": "Backpack",
+        "tags": [
+            "My Neighbor Totoro",
+            "Backpack",
+            "Studio Ghibli"
+        ],
+        "image": "https://example.com/totoro-backpack.jpg",
+        "rating": {
+            "rate": 4.8,
+            "count": 600
+        }
+    },
+    {
+        "_id": "65ae248f1fc9543c5e9a6846",
+        "title": "Attack on Titan Scout Regiment Watch",
+        "price": 1899,
+        "description": {
+            "material": "Stainless steel",
+            "features": [
+                "Scout Regiment emblem",
+                "Water-resistant"
+            ]
+        },
+        "category": "Accessories",
+        "tags": [
+            "Attack on Titan",
+            "Scout Regiment",
+            "Watch",
+            "Anime Accessories"
+        ],
+        "image": "https://example.com/aot-watch.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 550
         }
     }
 ]

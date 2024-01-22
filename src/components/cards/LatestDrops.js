@@ -1,6 +1,6 @@
 import React from "react";
-import { BytesizeHeart, TdesignCartAdd } from "../icons/Icons";
-import { useDispatch, useSelector } from "react-redux";
+import { BytesizeHeart } from "../icons/Icons";
+import { useDispatch } from "react-redux";
 import { addItems } from "../../utils/redux/cartSlice";
 import { addWishlist } from "../../utils/redux/WishlistSlice";
 
@@ -25,12 +25,9 @@ const StarRating = (rating) => {
     return view;
 };
 
-const Card = ({ data }) => {
+const LatestDrops = ({ data }) => {
     const dispatch = useDispatch();
     const StarArray = StarRating(data?.rating?.rate);
-    const handleOnClickCart = (data) => {
-        dispatch(addItems(data));
-    };
     const handleOnClickWishlist = (data) => {
         dispatch(addWishlist(data));
     };
@@ -70,4 +67,4 @@ const Card = ({ data }) => {
     );
 };
 
-export default Card;
+export default LatestDrops;

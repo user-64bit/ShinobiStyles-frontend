@@ -18,10 +18,14 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(
-                    "https://fakestoreapi.com/products"
-                );
+                const response = await fetch("http://localhost:3001/products");
+                // const response = await fetch(
+                //     "https://fakestoreapi.com/products"
+                // );
+                // const temp2 = await temp.json();
+                // console.log(temp2);
                 const data = await response.json();
+                console.log(data);
                 setAllCards(data);
             } catch (error) {
                 console.log("Error fetching data:", error);
