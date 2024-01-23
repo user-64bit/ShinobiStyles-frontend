@@ -19,8 +19,8 @@ const AllCards = ({ allCards }) => {
                 </div>
 
                 {/* FIXME: Decide Some logic to check trending Gears */}
-                <h1 className="py-4 text-center text-4xl font-bold">
-                    Trending Gears
+                <h1 className="py-4 text-center text-4xl font-bold uppercase">
+                    Trendi Winter Gears
                 </h1>
                 {/* FIXME: Dont' show every items, only show one card line and put view more button */}
                 <div className="flex flex-wrap">
