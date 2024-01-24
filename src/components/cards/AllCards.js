@@ -1,33 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "./Card";
-import LatestDrops from "./LatestDrops";
 
 const AllCards = ({ allCards }) => {
     const latestDrops = allCards.slice(0, 6);
+    const [trendyDrops, setTrendyDrops] = useState(
+        allCards.slice(0, 6) == null ? [] : allCards.slice(0, 6)
+    );
+    const showAllCards = () => {
+        // FIXME: redirect to `/products/trendy-drops/` and show all cards
+        setTrendyDrops(allCards);
+    };
     return (
         <>
-            <div className="w-[80%] mx-auto pt-10">
+            <div className="flex flex-col items-center pt-10">
                 {/* Latest Drops */}
                 {/* FIXME: Decide some logic to put Data in Latest Drops categories */}
-                <h1 className="pb-4 text-center text-4xl font-bold">
-                    LATEST DROPS
-                </h1>
+                <h1 className="pb-4 text-4xl font-bold">LATEST DROPS</h1>
                 <div className="flex flex-wrap">
                     {latestDrops.map((data) => {
-                        return <LatestDrops data={data} key={data.id} />;
+                        return <Card data={data} key={data.id} />;
                     })}
                 </div>
 
                 {/* FIXME: Decide Some logic to check trending Gears */}
-                <h1 className="py-4 text-center text-4xl font-bold uppercase">
+                <h1 className="py-4 text-4xl font-bold uppercase">
                     Trendi Winter Gears
                 </h1>
-                {/* FIXME: Dont' show every items, only show one card line and put view more button */}
-                <div className="flex flex-wrap">
-                    {allCards.map((data) => {
-                        return <Card data={data} key={data.id} />;
-                    })}
+                <div className="flex flex-col items-center">
+                    <div className="flex flex-wrap">
+                        {trendyDrops.map((data) => {
+                            return <Card data={data} key={data.id} />;
+                        })}
+                    </div>
+                    <button
+                        className="py-2 px-3 my-3 border bg-[#172d3b] text-white rounded-md hover:bg-[#29b7ff] transition-all ease-in-out"
+                        onClick={(e) => showAllCards()}
+                    >
+                        VIEW MORE
+                    </button>
                 </div>
+
+                <h1 className="py-4 text-4xl font-bold uppercase">
+                    Top Categories
+                </h1>
+                {/* FIXME: Create Categories Card */}
+                <div></div>
             </div>
         </>
     );

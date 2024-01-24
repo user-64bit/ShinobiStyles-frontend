@@ -7,7 +7,8 @@ import { addWishlist } from "../../utils/redux/WishlistSlice";
 const StarRating = (rating) => {
     let view = [];
     for (let i = 0; i < 5; i++) {
-        let starClass = Math.round(rating) > i ? "text-yellow-300" : "";
+        let starClass =
+            Math.round(rating) > i ? "text-[#ff3b60]" : "text-[#d9e2e6]";
         view.push(
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
                 <svg
@@ -36,7 +37,7 @@ const Card = ({ data }) => {
     };
     return (
         <>
-            <div className="w-60 max-w-sm my-2 mx-1 bg-white border shadow cursor-pointer">
+            <div className="w-60 max-w-sm my-2 bg-white border cursor-pointer">
                 <div className="relative">
                     <div className="z-50 absolute top-2 right-2 bg-white rounded-full p-2">
                         <BytesizeHeart
@@ -45,24 +46,36 @@ const Card = ({ data }) => {
                         />
                     </div>
                     <img
-                        className="h-[350px] w-full mx-auto"
+                        className={`h-[350px] w-full mx-auto border-b ${
+                            data?.image == null ? "invisible" : ""
+                        }`}
                         src={data?.image}
                         alt="product image"
                     />
                 </div>
-                <div className="pb-3">
-                    <h5 className="text-lg text-ellipsis whitespace-nowrap overflow-hidden pt-2 text-center tracking-tight text-gray-900 px-4">
+                <div className="pt-4">
+                    <h5
+                        className={`text-lg text-ellipsis whitespace-nowrap overflow-hidden text-center tracking-tight text-gray-900 px-4 ${
+                            data?.title == null ? "invisible" : ""
+                        }`}
+                    >
                         {data?.title}
                     </h5>
-                    <div className="flex justify-center my-3">
+                    <div
+                        className={`flex justify-center my-3 ${
+                            StarArray == null ? "invisible" : ""
+                        }`}
+                    >
                         {StarArray.map((arr, i) => {
                             return arr;
                         })}
                     </div>
                 </div>
-                <div className="text-center border-t">
-                    <span className="text-xl text-gray-900">
-                        ₹ {data?.price}
+                <div
+                    className={`text-center border-t py-2 ${data?.price} == null ? "invisible": ""`}
+                >
+                    <span className="text-sm font-semibold text-gray-900">
+                        ₹ {(data?.price).toFixed(2)}
                     </span>
                 </div>
             </div>

@@ -46,22 +46,34 @@ const LatestDrops = ({ data }) => {
                         />
                     </div>
                     <img
-                        className="h-[350px] w-full mx-auto border-b"
+                        className={`h-[350px] w-full mx-auto border-b ${
+                            data?.image == null ? "invisible" : ""
+                        }`}
                         src={data?.image}
                         alt="product image"
                     />
                 </div>
                 <div className="pt-4">
-                    <h5 className="text-lg text-ellipsis whitespace-nowrap overflow-hidden text-center tracking-tight text-gray-900 px-4">
+                    <h5
+                        className={`text-lg text-ellipsis whitespace-nowrap overflow-hidden text-center tracking-tight text-gray-900 px-4 ${
+                            data?.title == null ? "invisible" : ""
+                        }`}
+                    >
                         {data?.title}
                     </h5>
-                    <div className="flex justify-center my-3">
+                    <div
+                        className={`flex justify-center my-3 ${
+                            StarArray == null ? "invisible" : ""
+                        }`}
+                    >
                         {StarArray.map((arr, i) => {
                             return arr;
                         })}
                     </div>
                 </div>
-                <div className="text-center border-t py-2">
+                <div
+                    className={`text-center border-t py-2 ${data?.price} == null ? "invisible": ""`}
+                >
                     <span className="text-sm font-semibold text-gray-900">
                         ₹ {(data?.price).toFixed(2)}
                     </span>
