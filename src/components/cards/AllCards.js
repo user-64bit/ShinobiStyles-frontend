@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 const AllCards = ({ allCards }) => {
     const latestDrops = allCards.slice(0, 6);
@@ -12,13 +13,20 @@ const AllCards = ({ allCards }) => {
     };
     return (
         <>
-            <div className="flex flex-col items-center pt-10">
-                {/* Latest Drops */}
+            <div className="flex flex-col items-center justify-center -mt-20">
                 {/* FIXME: Decide some logic to put Data in Latest Drops categories */}
-                <h1 className="pb-4 text-4xl font-bold">LATEST DROPS</h1>
+                <h1 className="pb-8 text-4xl font-bold">LATEST DROPS</h1>
                 <div className="flex flex-wrap">
-                    {latestDrops.map((data) => {
-                        return <Card data={data} key={data.id} />;
+                    {latestDrops.map((data, id) => {
+                        return (
+                            <Link
+                                to={"/products/" + data?._id}
+                                state={{ data: data }}
+                                key={data?._id}
+                            >
+                                <Card data={data} />
+                            </Link>
+                        );
                     })}
                 </div>
 
@@ -28,8 +36,15 @@ const AllCards = ({ allCards }) => {
                 </h1>
                 <div className="flex flex-col items-center">
                     <div className="flex flex-wrap">
-                        {trendyDrops.map((data) => {
-                            return <Card data={data} key={data.id} />;
+                        {trendyDrops.map((data, id) => {
+                            return (
+                                <Link
+                                    to={"/products/" + data?._id}
+                                    key={data?._id}
+                                >
+                                    <Card data={data} />
+                                </Link>
+                            );
                         })}
                     </div>
                     <button

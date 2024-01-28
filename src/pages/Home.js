@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../components/navbar/Navbar";
-import Header from "../components/header/Header";
 import AllCards from "../components/cards/AllCards";
 import CardShimmer from "../utils/CardShimmer";
 
@@ -19,13 +17,8 @@ const Home = () => {
         const fetchData = async () => {
             try {
                 const response = await fetch("http://localhost:3001/products");
-                // const response = await fetch(
-                //     "https://fakestoreapi.com/products"
-                // );
-                // const temp2 = await temp.json();
-                // console.log(temp2);
                 const data = await response.json();
-                console.log(data);
+                // console.log(data);
                 setAllCards(data);
             } catch (error) {
                 console.log("Error fetching data:", error);
@@ -38,8 +31,6 @@ const Home = () => {
     }, []);
     return (
         <>
-            <Header />
-            <Navbar allCards={allCards} setAllCards={setAllCards} />
             <>{loading ? <CardShimmer /> : <AllCards allCards={allCards} />}</>
         </>
     );

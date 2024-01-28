@@ -9,6 +9,7 @@ const Carousel = ({ IMAGES }) => {
     const timeoutRef = useRef(null);
     const listRef = useRef(null);
     let delay = 2500;
+    console.log("tick tack");
     // useEffect(() => {
     //     timeoutRef.current = setTimeout(() => {
     //         const listNode = listRef.current;
@@ -43,7 +44,7 @@ const Carousel = ({ IMAGES }) => {
     };
     return (
         <>
-            <div className="overflow-hidden">
+            <div className="relative -top-[182px] overflow-hidden">
                 <article className="flex w-[200%] animate-slider">
                     <div className="w-[100%]">
                         <ul className="flex">
@@ -61,7 +62,10 @@ const Carousel = ({ IMAGES }) => {
                             {IMAGES.map((url, idx) => {
                                 return (
                                     <li className="w-[100%]" key={url + idx}>
-                                        <img src={url} className="w-[600px]" />
+                                        <img
+                                            src={url}
+                                            className="bg-cover w-[600px]"
+                                        />
                                     </li>
                                 );
                             })}

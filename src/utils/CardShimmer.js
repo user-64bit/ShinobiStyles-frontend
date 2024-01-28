@@ -9,7 +9,7 @@ const CardShimmer = () => {
             <div className="flex flex-wrap justify-between w-[80%] mx-auto">
                 {Array(15)
                     .fill("")
-                    .map((idx) => {
+                    .map((data, idx) => {
                         return (
                             <>
                                 <div

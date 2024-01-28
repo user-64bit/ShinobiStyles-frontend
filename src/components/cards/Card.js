@@ -10,7 +10,10 @@ const StarRating = (rating) => {
         let starClass =
             Math.round(rating) > i ? "text-[#ff3b60]" : "text-[#d9e2e6]";
         view.push(
-            <div className="flex items-center space-x-1 rtl:space-x-reverse">
+            <div
+                className="flex items-center space-x-1 rtl:space-x-reverse"
+                key={i}
+            >
                 <svg
                     className={`w-4 h-4 ${starClass}`}
                     aria-hidden="true"
