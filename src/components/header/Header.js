@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     AkarIconsDiscordFill,
     DeviconTwitter,
@@ -7,8 +7,6 @@ import {
 import Dropdown from "./dropdown/Dropdown";
 import logo from "../../assets/logo.png";
 import Search from "./search/Search";
-import { IMAGES } from "../../config";
-import Carousel from "./carousel/Carousel";
 import { BxUser, BytesizeCart, BytesizeHeart } from "../icons/Icons";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -21,9 +19,11 @@ const shadowPng = {
     filter: "grayscale(1) invert(1) drop-shadow(5px 5px 5px #222)",
 };
 
-const Header = ({ allCards, carousel = true }) => {
+const Header = ({ allCards }) => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
+    const [isHomePage, setIsHomePage] = useState(true);
+    // console.log(window.location.href);
     return (
         <>
             {/* FIXME: Routing, Animations */}
@@ -55,7 +55,9 @@ const Header = ({ allCards, carousel = true }) => {
                 </div>
 
                 {/* This is literally the navabar with dropdowns */}
-                <div className="flex flex-row items-center justify-around">
+                <div
+                    className={`flex flex-row items-center justify-around text-white`}
+                >
                     <div className="flex">
                         {/* Top Categories */}
                         <Dropdown
@@ -98,10 +100,12 @@ const Header = ({ allCards, carousel = true }) => {
                     </div>
                     <div className="flex">
                         <Search data={allCards} />
-                        <BxUser
-                            className="ms-2 cursor-pointer text-2xl"
-                            style={reverseColour}
-                        />
+                        <Link to={"/my-account"}>
+                            <BxUser
+                                className="ms-2 cursor-pointer text-2xl"
+                                style={reverseColour}
+                            />
+                        </Link>
                         <BytesizeHeart
                             className="ms-2 cursor-pointer text-2xl"
                             style={reverseColour}
@@ -115,7 +119,6 @@ const Header = ({ allCards, carousel = true }) => {
                     </div>
                 </div>
             </div>
-            {carousel ? <Carousel IMAGES={IMAGES} /> : null}
         </>
     );
 };

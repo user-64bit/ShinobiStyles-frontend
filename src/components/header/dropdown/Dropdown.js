@@ -2,20 +2,26 @@ import { useState } from "react";
 import React from "react";
 import { EvaArrowIosDownwardOutline } from "../../icons/Icons";
 
+const shadowText = {
+    WebkitFilter: "grayscale(1)  drop-shadow(8px 10x 4px #222)",
+    filter: "grayscale(1) drop-shadow(8px 8px 5px #222)",
+};
 const Dropdown = ({ navTitle, navItems, downArrow = false, ...props }) => {
     const [open, setOpen] = useState(false);
-
     return (
         <div
             onMouseLeave={() => setOpen(false)}
-            className="pt-3 text-white relative" // Add relative positioning to the parent div
+            className={`pt-3 relative`}
             {...props}
         >
             <button
                 onMouseOver={() => setOpen(true)}
                 className="flex items-center  p-2 bg-transparent"
             >
-                <span className="mr-2 uppercase text-xs font-bold">
+                <span
+                    className="mr-2 uppercase text-xs font-bold"
+                    style={shadowText}
+                >
                     {navTitle}
                 </span>
                 {downArrow ? <EvaArrowIosDownwardOutline /> : false}

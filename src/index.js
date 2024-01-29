@@ -11,6 +11,8 @@ import store from "./utils/redux/store";
 import Error from "./components/errors/Error";
 import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./components/success/PaymentSuccess";
+import MyAccount from "./pages/MyAccount";
+
 const App = () => {
     return (
         <>
@@ -31,8 +33,12 @@ const router = createBrowserRouter([
                 element: <Home />,
             },
             {
+                path: "/my-account",
+                element: <MyAccount />,
+            },
+            {
                 path: "/products/:id",
-                element: <Product carousel={false} />,
+                element: <Product />,
             },
             {
                 path: "/checkout",

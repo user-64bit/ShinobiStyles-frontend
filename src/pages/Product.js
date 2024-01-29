@@ -2,15 +2,16 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { BytesizeCart } from "../components/icons/Icons";
 import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 const Product = () => {
     const { state } = useLocation();
     const data = state?.data;
     const handleCheckout = async (amount) => {
-        const { data } = await axios.get("http://localhost:3001/api/getkey");
+        const { data } = await axios.get(`${BACKEND_URL}/api/getkey`);
         const {
             data: { order },
-        } = await axios.post("http://localhost:3001/api/checkout", {
+        } = await axios.post(`${BACKEND_URL}/api/checkout`, {
             amount,
         });
         var options = {
@@ -21,7 +22,7 @@ const Product = () => {
             description: "Test Transaction",
             image: "https://avatars.githubusercontent.com/u/76396335?v=4",
             order_id: order.id,
-            callback_url: "http://localhost:3001/api/paymentverification",
+            callback_url: `${BACKEND_URL}/api/paymentverification`,
             prefill: {
                 // FIXME: this data will be auto generated from user data (allmost everything in options)
                 name: "Arth Prajapati",

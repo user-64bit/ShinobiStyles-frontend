@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import AllCards from "../components/cards/AllCards";
 import CardShimmer from "../utils/CardShimmer";
+import Carousel from "../components/header/carousel/Carousel";
+import { BACKEND_URL, IMAGES } from "../config";
 
 const Home = () => {
     // Backup Function if API Fucked up
@@ -16,7 +18,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("http://localhost:3001/products");
+                const response = await fetch(`${BACKEND_URL}/products`);
                 const data = await response.json();
                 // console.log(data);
                 setAllCards(data);
@@ -31,6 +33,7 @@ const Home = () => {
     }, []);
     return (
         <>
+            <Carousel IMAGES={IMAGES} />
             <>{loading ? <CardShimmer /> : <AllCards allCards={allCards} />}</>
         </>
     );
