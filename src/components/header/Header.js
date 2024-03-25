@@ -5,11 +5,12 @@ import {
     CibInstagram,
 } from "../icons/Icons";
 import Dropdown from "./dropdown/Dropdown";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo2.svg";
 import Search from "./search/Search";
 import { BxUser, BytesizeCart, BytesizeHeart } from "../icons/Icons";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import HamburgureMenu from "./HamburgureMenu";
 const reverseColour = {
     WebkitFilter: "grayscale(1) invert(1)",
     filter: "grayscale(1) invert(1)",
@@ -28,7 +29,7 @@ const Header = ({ allCards }) => {
         <>
             {/* FIXME: Routing, Animations */}
             {/* <div className="fixed w-full"> */}
-            <div className="relative top-0 z-50">
+            <div className="absolute top-0 z-50 w-full">
                 <div className="flex justify-between bg-[#172d3b] p-3">
                     <div className="flex">
                         <a href="https://discord.com" target="_blank">
@@ -41,11 +42,6 @@ const Header = ({ allCards }) => {
                             <DeviconTwitter className="text-md cursor-pointer" />
                         </a>
                     </div>
-
-                    {/* Floating Text about Discounts (maybe) */}
-                    <div className="text-white">
-                        <span>7.5% Discounts using SHINOBI Code</span>
-                    </div>
                     {/* Track Order, Coupons, offer, Help */}
                     <div className="text-[#28B4FB] uppercase text-xs">
                         <span className="mx-1">Track Order</span>
@@ -56,9 +52,10 @@ const Header = ({ allCards }) => {
 
                 {/* This is literally the navabar with dropdowns */}
                 <div
-                    className={`flex flex-row items-center justify-around text-white`}
+                    className={`flex flex-row md:items-center justify-between md:justify-around text-white`}
                 >
-                    <div className="flex">
+                    {/* Classic Dropdown till medium screen size */}
+                    <div className="hidden md:flex">
                         {/* Top Categories */}
                         <Dropdown
                             navTitle={"Top Categories"}
@@ -74,35 +71,40 @@ const Header = ({ allCards }) => {
                             downArrow={true}
                         />
 
-                        {/* Top Categories */}
+                        {/* Shop by Product */}
                         <Dropdown
                             navTitle={"Shop by Product"}
                             navItems={["A", "B", "C", "D"]}
                             downArrow={true}
                         />
 
-                        {/* Top Categories */}
+                        {/* Shop by Anime */}
                         <Dropdown
                             navTitle={"Shop by Anime"}
                             navItems={["A", "B", "C", "D"]}
                             downArrow={true}
                         />
                     </div>
-
-                    <div className="w-80">
+                    {/* Hamburger Menu */}
+                    <div className="flex md:hidden h-12 bg-purple-600 w-full">
+                        <HamburgureMenu />
+                    </div>
+                    {/* LOGO of Shinoby Style */}
+                    <div className="hidden md:block">
                         <Link to="/">
                             <img
+                                className="w-80"
                                 src={logo}
                                 alt="Shinobi Styles"
                                 style={shadowPng}
                             />
                         </Link>
                     </div>
-                    <div className="flex">
+                    <div className="flex md:relative absolute right-0 justify-between md:text-white h-12 items-center">
                         <Search data={allCards} />
                         <Link to={"/my-account"}>
                             <BxUser
-                                className="ms-2 cursor-pointer text-2xl"
+                                className="ms-2 cursor-pointer text-2xl text-black"
                                 style={reverseColour}
                             />
                         </Link>

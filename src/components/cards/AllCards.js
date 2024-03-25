@@ -13,7 +13,7 @@ const AllCards = ({ allCards }) => {
     };
     return (
         <>
-            <div className="flex flex-col items-center justify-center -mt-20">
+            <div className="flex flex-col items-center justify-center mt-20">
                 {/* FIXME: Decide some logic to put Data in Latest Drops categories */}
                 <h1 className="pb-8 text-4xl font-bold">LATEST DROPS</h1>
                 <div className="flex flex-wrap">

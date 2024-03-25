@@ -58,7 +58,7 @@ const MyAccount = () => {
                         LOGIN
                     </button>
                 </div>
-                {/* <div className="border-e-2 border-gray-500 h-52"></div> */}
+
                 <div className="w-full mx-4">
                     <div class="col-span-full mt-2">
                         <label
