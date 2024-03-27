@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { RiArrowLeftWideLine, RiArrowRightWideLine } from "../../icons/Icons";
 
 const Carousel = ({ IMAGES }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(3);
     // Handle Next and Previous is not working currently
     const handleNext = () => {
         setCurrentIndex((idx) => {
@@ -20,25 +20,26 @@ const Carousel = ({ IMAGES }) => {
             <div className="relative max-w-full">
                 <button
                     className="absolute left-0 top-1/2 transform -translate-y-1/2 text-gray-700 text-4xl py-20 hover:bg-gradient-to-r hover:from-black hover:bg-opacity-80 hover:text-white"
-                    onClick={() => handleNext()}
+                    onClick={() => handlePrev()}
                 >
                     <RiArrowLeftWideLine />
                 </button>
 
                 <div className="overflow-x-scroll no-scrollbar bg-gray-300 rounded shadow-md pt-[11%] md:p-0">
                     <div className="flex">
-                        {IMAGES.map((image) => (
+                        {IMAGES.map((image, i) => (
                             <img
+                                key={i}
                                 src={image}
                                 alt="Image 1"
-                                className="w-[350px] object-cover lg:w-[500px]"
+                                className={`w-[350px] object-cover lg:w-[500px]`}
                             />
                         ))}
                     </div>
                 </div>
                 <button
                     className="absolute right-0 top-1/2 transform -translate-y-1/2 text-gray-700 text-4xl py-20 hover:bg-gradient-to-l hover:from-black hover:bg-opacity-80 hover:text-white"
-                    onClick={() => handlePrev()}
+                    onClick={() => handleNext()}
                 >
                     <RiArrowRightWideLine />
                 </button>

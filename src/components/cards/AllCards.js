@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllCards = ({ allCards }) => {
     const latestDrops = allCards.slice(0, 6);
     const [trendyDrops, setTrendyDrops] = useState(
-        allCards.slice(0, 6) == null ? [] : allCards.slice(0, 6)
+        allCards?.slice(0, 6) == null ? [] : allCards?.slice(0, 6)
     );
     const showAllCards = () => {
         // FIXME: redirect to `/products/trendy-drops/` and show all cards

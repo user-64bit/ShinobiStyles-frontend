@@ -20,10 +20,10 @@ const shadowPng = {
     filter: "grayscale(1) invert(1) drop-shadow(5px 5px 5px #222)",
 };
 
-const Header = ({ allCards }) => {
+const Header = () => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
-    const [isHomePage, setIsHomePage] = useState(true);
+
     // console.log(window.location.href);
     return (
         <>
@@ -101,7 +101,7 @@ const Header = ({ allCards }) => {
                         </Link>
                     </div>
                     <div className="flex md:relative absolute right-0 justify-between md:text-white h-12 items-center">
-                        <Search data={allCards} />
+                        <Search />
                         <Link to={"/my-account"}>
                             <BxUser
                                 className="ms-2 cursor-pointer text-2xl text-black"

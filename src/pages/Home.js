@@ -3,6 +3,8 @@ import AllCards from "../components/cards/AllCards";
 import CardShimmer from "../utils/CardShimmer";
 import Carousel from "../components/header/carousel/Carousel";
 import { BACKEND_URL, IMAGES } from "../config";
+import { useDispatch } from "react-redux";
+import { addCards } from "../utils/redux/cardSlice";
 
 const Home = () => {
     // Backup Function if API Fucked up
@@ -12,6 +14,7 @@ const Home = () => {
         // Create Custom Hook for fetching data from direcotry....
         return [];
     };
+    const dispatch = useDispatch();
     const [allCards, setAllCards] = useState(FetchBackupData);
     const [loading, setLoading] = useState(true);
 
@@ -22,6 +25,7 @@ const Home = () => {
                 const data = await response.json();
                 // console.log(data);
                 setAllCards(data);
+                dispatch(addCards(data));
             } catch (error) {
                 console.log("Error fetching data:", error);
             } finally {

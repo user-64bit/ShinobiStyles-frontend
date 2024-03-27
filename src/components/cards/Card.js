@@ -1,6 +1,6 @@
 import React from "react";
-import { BytesizeHeart, TdesignCartAdd } from "../icons/Icons";
-import { useDispatch, useSelector } from "react-redux";
+import { BytesizeHeart } from "../icons/Icons";
+import { useDispatch } from "react-redux";
 import { addItems } from "../../utils/redux/cartSlice";
 import { addWishlist } from "../../utils/redux/WishlistSlice";
 
