@@ -32,23 +32,21 @@ const Dropdown = ({ navTitle, navItems, downArrow = false, ...props }) => {
                 }`}
             >
                 {navItems.map((li, id) => (
-                    <>
-                        <li
-                            className="flex pt-6 justify-center bg-[#d9e2e6] 
+                    <li
+                        className="flex pt-6 justify-center bg-[#d9e2e6]
                             text-sm transition-all text-[#172d3b] hover:text-blue-500 hover:ease-in-out break-words"
-                            key={id}
+                        key={id}
+                    >
+                        <div
+                            className={`pb-2 text-center border-gray-500 w-3/5 ${
+                                navItems.length - 1 === id
+                                    ? "border-0"
+                                    : "border-b"
+                            }`}
                         >
-                            <div
-                                className={`pb-2 text-center border-gray-500 w-3/5 ${
-                                    navItems.length - 1 === id
-                                        ? "border-0"
-                                        : "border-b"
-                                }`}
-                            >
-                                {li}
-                            </div>
-                        </li>
-                    </>
+                            {li}
+                        </div>
+                    </li>
                 ))}
             </ul>
         </div>

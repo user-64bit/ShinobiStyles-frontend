@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
     AkarIconsDiscordFill,
     DeviconTwitter,
@@ -29,7 +29,7 @@ const Header = () => {
         <>
             {/* FIXME: Routing, Animations */}
             {/* <div className="fixed w-full"> */}
-            <div className="absolute top-0 z-50 w-full">
+            <div className="absolute top-0 z-50 w-full bg-black bg-opacity-50">
                 <div className="flex justify-between bg-[#172d3b] p-3">
                     <div className="flex">
                         <a href="https://discord.com" target="_blank">
