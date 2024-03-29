@@ -5,7 +5,7 @@ const HamburgureMenu = () => {
     const [hamburger, setHamburger] = useState(false);
     return (
         <>
-            <div className="p-2 text-2xl">
+            <div className="p-2 text-4xl">
                 {hamburger ? (
                     <button
                         onClick={() => setHamburger(!hamburger)}

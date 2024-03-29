@@ -19,10 +19,10 @@ const CardShimmer = () => {
                                 <div className="z-50 absolute top-2 right-2 rounded-full p-2">
                                     <BytesizeHeart className="text-xl" />
                                 </div>
-                                <div className="h-[350px] w-full mx-auto border-b dark:bg-gray-400"></div>
+                                <div className="h-[350px] w-full mx-auto border-b dark:bg-gray-500"></div>
                             </div>
                             <div className="pt-4">
-                                <h4 className="w-1/2 h-4 rounded-lg mx-auto dark:bg-gray-400"></h4>
+                                <h4 className="w-1/2 h-4 rounded-lg mx-auto dark:bg-gray-500"></h4>
                                 <div className={`flex justify-center my-3`}>
                                     {Array(5)
                                         .fill("")
@@ -33,7 +33,7 @@ const CardShimmer = () => {
                                                     key={hash + idx}
                                                 >
                                                     <svg
-                                                        className={`w-4 h-4 dark:text-gray-400`}
+                                                        className={`w-4 h-4 dark:text-gray-500`}
                                                         aria-hidden="true"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         fill="currentColor"
@@ -48,7 +48,7 @@ const CardShimmer = () => {
                             </div>
                             <div className={`text-center border-t py-2`}>
                                 <span className="text-sm font-semibold text-gray-900">
-                                    <h4 className="w-1/4 h-4 rounded-md mx-auto dark:bg-gray-400">
+                                    <h4 className="w-1/4 h-4 rounded-md mx-auto dark:bg-gray-500">
                                         ₹
                                     </h4>
                                 </span>

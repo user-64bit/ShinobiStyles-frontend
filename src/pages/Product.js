@@ -41,25 +41,37 @@ const Product = () => {
     };
     return (
         <>
-            <div className="flex justify-center items-center">
-                <div className="mx-4">
+            <div className="flex pt-[12%] w-4/5 mx-auto">
+                <div className="mx-4 border w-1/2">
                     <img
                         src={data?.image}
-                        className={`h-[350px] w-full mx-auto border-b ${
-                            data?.image == null ? "invisible" : ""
+                        className={`h-[350px] border-b ${
+                            data?.image == null ? "hidden" : ""
                         }`}
                     ></img>
                 </div>
-                <div>
-                    <li>{data?.title}</li>
-                    <li>₹ {(data?.price).toFixed(2)}</li>
+                <div className="border w-1/2 px-4">
+                    <h1 className="text-3xl font-light">{data?.title}</h1>
+                    <h1 className="text-2xl font-bold pt-5 text-[#5e3fde]">
+                        ₹ {(data?.price).toFixed(2)}
+                    </h1>
+                    <p>or 3 monthly payments of ₹400 with EMI Options</p>
+                    <p className="text-slate-400 text-sm">
+                        UPI & Cards Accepted, Online approval in 2 minutes
+                    </p>
+                    <h1>In Stock</h1>
+                    <div>
+                        <button>Add to cart</button>
+                    </div>
                 </div>
-                <Link to={"/checkout"}>
+
+                {/* will move this whole functionality to Checkout page which will be linked in Cart section */}
+                {/* <Link to={"/checkout"}>
                     <BytesizeCart
                         className="mx-4 cursor-pointer"
                         onClick={() => handleCheckout(data?.price)}
                     />
-                </Link>
+                </Link> */}
             </div>
         </>
     );
