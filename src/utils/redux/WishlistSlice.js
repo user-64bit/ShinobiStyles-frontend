@@ -9,12 +9,17 @@ const WishlistSlice = createSlice({
         addWishlist: (state, action) => {
             state.items.push(action.payload);
         },
-        // FIXME:Remove Items when create desing for Cart
+        removeWish: (state, action) => {
+            state.items = state.items.filter(
+                (item) => item._id !== action.payload._id
+            );
+        },
+        // FIXME:Remove Items when create design for Cart
         clearWishlist: (state) => {
             state.items = [];
         },
     },
 });
 
-export const { addWishlist, clearWishlist } = WishlistSlice.actions;
+export const { addWishlist, clearWishlist, removeWish } = WishlistSlice.actions;
 export default WishlistSlice.reducer;

@@ -41,8 +41,6 @@ const Header = () => {
     // console.log(window.location.href);
     return (
         <>
-            {/* FIXME: Routing, Animations */}
-            {/* <div className="fixed w-full"> */}
             <div className="absolute top-0 z-50 w-full">
                 <div className="flex justify-between bg-[#172d3b] p-3">
                     <div className="flex">
@@ -65,18 +63,16 @@ const Header = () => {
                 </div>
 
                 <div className="bg-black bg-opacity-10">
-                    <div
-                        className={`flex justify-between w-4/5 mx-auto text-white items-center `}
-                    >
+                    <div className="flex justify-between w-4/5 mx-auto text-white items-center">
                         {/* Hamburger Menu */}
-                        <div className="">
+                        <div className="w-16">
                             <HamburgureMenu />
                         </div>
                         {/* LOGO of Shinoby Style */}
-                        <div className="w-72">
+                        <div className="">
                             <Link to="/">
                                 <img
-                                    className=""
+                                    className="w-72 "
                                     src={logo}
                                     alt="Shinobi Styles"
                                     style={shadowPng}
@@ -90,11 +86,13 @@ const Header = () => {
                                 style={reverseColour}
                                 loveditems={wishlistItems?.length}
                             />
-                            <BytesizeCart
-                                className="ms-2 cursor-pointer text-2xl"
-                                style={reverseColour}
-                                cartitems={cartitems?.length}
-                            />
+                            <Link to={"/cart"}>
+                                <BytesizeCart
+                                    className="ms-2 cursor-pointer text-2xl"
+                                    style={reverseColour}
+                                    cartitems={cartitems?.length}
+                                />
+                            </Link>
                             {user ? (
                                 <button onClick={() => handleLogOut()}>
                                     <MaterialSymbolsLightLogout className="ms-2 text-2xl" />

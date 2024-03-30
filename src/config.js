@@ -31,3 +31,6 @@ export const BACKUP_ARRAY = [
     "f2d4d35dcdd75468f4cd1d1714a5e6de4711e9b3987b596d724fe4cc9edf11c6",
     "e75c62dbb1ef2fe16bda39a0b487648a0bce4bb933f2d77a8f3664a8b7b6b7da",
 ];
+
+export const InputBoxCSS =
+    "block w-full rounded-lg border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2";

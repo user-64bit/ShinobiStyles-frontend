@@ -12,6 +12,7 @@ import Error from "./components/errors/Error";
 import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./components/success/PaymentSuccess";
 import MyAccount from "./pages/MyAccount";
+import Cart from "./pages/Cart";
 
 const App = () => {
     return (
@@ -37,8 +38,12 @@ const router = createBrowserRouter([
                 element: <MyAccount />,
             },
             {
-                path: "/products/:id",
+                path: "/products/:name",
                 element: <Product />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
             },
             {
                 path: "/checkout",

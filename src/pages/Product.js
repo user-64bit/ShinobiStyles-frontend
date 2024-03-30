@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { BytesizeCart } from "../components/icons/Icons";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
+import AddToCart from "../components/buttons/AddToCart";
+import QuantityCounter from "../components/buttons/QuantityCounter";
+import SizeVariants from "../components/buttons/SizeVariants";
+import WishListBtn from "../components/buttons/WishListBtn";
 
 const Product = () => {
+    const [count, setCount] = useState(1);
+    const [selectedSize, setSelectedSize] = useState("");
+
     const { state } = useLocation();
     const data = state?.data;
+    const ProductData = {
+        title:
+            selectedSize !== ""
+                ? `${data?.title}- ${selectedSize}`
+                : data?.title,
+        price: data?.price,
+        description: data?.description,
+        image: data?.image,
+        quantity: count ? count : undefined,
+        size: selectedSize,
+    };
     const handleCheckout = async (amount) => {
         const { data } = await axios.get(`${BACKEND_URL}/api/getkey`);
         const {
@@ -43,12 +60,13 @@ const Product = () => {
         <>
             <div className="flex pt-[12%] w-4/5 mx-auto">
                 <div className="mx-4 border w-1/2">
+                    {/* FIXME:Carousel of multiple Images */}
                     <img
                         src={data?.image}
-                        className={`h-[350px] border-b ${
+                        className={`h-[450px] border-b ${
                             data?.image == null ? "hidden" : ""
                         }`}
-                    ></img>
+                    />
                 </div>
                 <div className="border w-1/2 px-4">
                     <h1 className="text-3xl font-light">{data?.title}</h1>
@@ -59,9 +77,18 @@ const Product = () => {
                     <p className="text-slate-400 text-sm">
                         UPI & Cards Accepted, Online approval in 2 minutes
                     </p>
-                    <h1>In Stock</h1>
+                    <SizeVariants
+                        sizes={data?.sizes}
+                        selectedSize={selectedSize}
+                        setSelectedSize={setSelectedSize}
+                    />
+                    <h1 className="pt-5">In Stock</h1>
+                    <div className="flex gap-x-2 pt-2">
+                        <QuantityCounter setCount={setCount} count={count} />
+                        <AddToCart data={ProductData} />
+                    </div>
                     <div>
-                        <button>Add to cart</button>
+                        <WishListBtn data={data} />
                     </div>
                 </div>
 

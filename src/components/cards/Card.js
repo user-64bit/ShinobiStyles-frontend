@@ -1,7 +1,6 @@
 import React from "react";
 import { BytesizeHeart } from "../icons/Icons";
 import { useDispatch } from "react-redux";
-import { addItems } from "../../utils/redux/cartSlice";
 import { addWishlist } from "../../utils/redux/WishlistSlice";
 
 const StarRating = (rating) => {
@@ -30,32 +29,18 @@ const StarRating = (rating) => {
 };
 
 const Card = ({ data }) => {
-    const dispatch = useDispatch();
     const StarArray = StarRating(data?.rating?.rate);
-    const handleOnClickCart = (data) => {
-        dispatch(addItems(data));
-    };
-    const handleOnClickWishlist = (data) => {
-        dispatch(addWishlist(data));
-    };
+
     return (
         <>
-            <div className="w-60 max-w-sm my-2 bg-white border cursor-pointer">
-                <div className="relative">
-                    <div className="z-50 absolute top-2 right-2 bg-white rounded-full p-2">
-                        <BytesizeHeart
-                            onClick={() => handleOnClickWishlist()}
-                            className="text-xl"
-                        />
-                    </div>
-                    <img
-                        className={`h-[350px] w-full mx-auto border-b ${
-                            data?.image == null ? "invisible" : ""
-                        }`}
-                        src={data?.image}
-                        alt="product image"
-                    />
-                </div>
+            <div className="w-60 max-w-sm my-2 bg-white border cursor-pointer relative">
+                <img
+                    className={`h-[350px] w-full mx-auto border-b ${
+                        data?.image == null ? "invisible" : ""
+                    }`}
+                    src={data?.image}
+                    alt="product image"
+                />
                 <div className="pt-4">
                     <h5
                         className={`text-lg text-ellipsis whitespace-nowrap overflow-hidden text-center tracking-tight text-gray-900 px-4 ${
@@ -75,7 +60,9 @@ const Card = ({ data }) => {
                     </div>
                 </div>
                 <div
-                    className={`text-center border-t py-2 ${data?.price} == null ? "invisible": ""`}
+                    className={`text-center border-t py-2 ${
+                        data?.price == null ? "invisible" : ""
+                    }`}
                 >
                     <span className="text-sm font-semibold text-gray-900">
                         ₹ {(data?.price).toFixed(2)}

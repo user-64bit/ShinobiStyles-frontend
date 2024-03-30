@@ -25,10 +25,6 @@ const StarRating = (rating) => {
     return view;
 };
 
-const sizeAttributes = (sizesArr) => {
-    // FIXME:Make blocks for every size for cloths [S] [M] [L]
-};
-
 const LatestDrops = ({ data }) => {
     const dispatch = useDispatch();
     const StarArray = StarRating(data?.rating?.rate);

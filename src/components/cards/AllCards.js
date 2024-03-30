@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import { BytesizeHeart } from "../icons/Icons";
+import WishList from "../buttons/WishList";
 
 const AllCards = ({ allCards }) => {
     const latestDrops = allCards.slice(0, 6);
@@ -19,13 +21,19 @@ const AllCards = ({ allCards }) => {
                 <div className="flex flex-wrap">
                     {latestDrops.map((data, id) => {
                         return (
-                            <Link
-                                to={"/products/" + data?._id}
-                                state={{ data: data }}
-                                key={data?._id}
-                            >
-                                <Card data={data} />
-                            </Link>
+                            <div className="relative">
+                                <WishList data={data} />
+                                <Link
+                                    to={
+                                        "/products/" +
+                                        data?.title.split(" ").join("-")
+                                    }
+                                    state={{ data: data }}
+                                    key={data?._id}
+                                >
+                                    <Card data={data} />
+                                </Link>
+                            </div>
                         );
                     })}
                 </div>
@@ -38,12 +46,19 @@ const AllCards = ({ allCards }) => {
                     <div className="flex flex-wrap">
                         {trendyDrops.map((data, id) => {
                             return (
-                                <Link
-                                    to={"/products/" + data?._id}
-                                    key={data?._id}
-                                >
-                                    <Card data={data} />
-                                </Link>
+                                <div className="relative">
+                                    <WishList data={data} />
+                                    <Link
+                                        to={
+                                            "/products/" +
+                                            data?.title.split(" ").join("-")
+                                        }
+                                        state={{ data: data }}
+                                        key={data?._id}
+                                    >
+                                        <Card data={data} />
+                                    </Link>
+                                </div>
                             );
                         })}
                     </div>

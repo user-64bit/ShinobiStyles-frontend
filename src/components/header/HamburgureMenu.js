@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PajamasHamburger } from "../icons/Icons";
+import { MakiCross, PajamasHamburger } from "../icons/Icons";
 
 const HamburgureMenu = () => {
     const [hamburger, setHamburger] = useState(false);
@@ -11,7 +11,7 @@ const HamburgureMenu = () => {
                         onClick={() => setHamburger(!hamburger)}
                         className="font-bold"
                     >
-                        X
+                        <MakiCross />
                     </button>
                 ) : (
                     <button onClick={() => setHamburger(!hamburger)}>

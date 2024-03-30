@@ -243,3 +243,62 @@ export const MaterialSymbolsLightLogout = (props) => (
         ></path>
     </svg>
 );
+
+export const MakiCross = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 15 15"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"
+        ></path>
+    </svg>
+);
+
+export const LaHeart = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 32 32"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M9.5 5C5.363 5 2 8.402 2 12.5c0 1.43.648 2.668 1.25 3.563a9.25 9.25 0 0 0 1.219 1.468L15.28 28.375l.719.719l.719-.719L27.53 17.531S30 15.355 30 12.5C30 8.402 26.637 5 22.5 5c-3.434 0-5.645 2.066-6.5 2.938C15.145 7.066 12.934 5 9.5 5zm0 2c2.988 0 5.75 2.906 5.75 2.906l.75.844l.75-.844S19.512 7 22.5 7c3.043 0 5.5 2.496 5.5 5.5c0 1.543-1.875 3.625-1.875 3.625L16 26.25L5.875 16.125s-.484-.465-.969-1.188C4.422 14.216 4 13.274 4 12.5C4 9.496 6.457 7 9.5 7z"
+        ></path>
+    </svg>
+);
+
+export const IlHeart = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 710 780"
+        {...props}
+    >
+        <path
+            fill="#ff0000"
+            d="M651 55q29 27 44 61t15 71t-13 71t-42 63L371 605q-7 7-16 7t-17-7L54 321q-27-28-40-63T1 187t14-71t42.5-61T121 17t70-11t70 16t61 42l33 33l33-33q27-27 61-42t70-16t70 11t62 38z"
+        ></path>
+    </svg>
+);
+export const ZmdiDelete = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 304 384"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M21 341V85h256v256q0 18-12.5 30.5T235 384H64q-18 0-30.5-12.5T21 341zM299 21v43H0V21h75L96 0h107l21 21h75z"
+        ></path>
+    </svg>
+);
