@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import AddToCart from "../components/buttons/AddToCart";
@@ -14,8 +14,9 @@ const Product = () => {
     const { state } = useLocation();
     const data = state?.data;
     const ProductData = {
+        _id: data?._id,
         title:
-            selectedSize !== ""
+            selectedSize != ""
                 ? `${data?.title}- ${selectedSize}`
                 : data?.title,
         price: data?.price,
@@ -85,7 +86,11 @@ const Product = () => {
                     <h1 className="pt-5">In Stock</h1>
                     <div className="flex gap-x-2 pt-2">
                         <QuantityCounter setCount={setCount} count={count} />
-                        <AddToCart data={ProductData} />
+                        <AddToCart
+                            data={ProductData}
+                            selectedSize={selectedSize}
+                            count={count}
+                        />
                     </div>
                     <div>
                         <WishListBtn data={data} />

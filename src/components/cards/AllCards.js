@@ -21,7 +21,7 @@ const AllCards = ({ allCards }) => {
                 <div className="flex flex-wrap">
                     {latestDrops.map((data, id) => {
                         return (
-                            <div className="relative">
+                            <div className="relative" key={data?._id}>
                                 <WishList data={data} />
                                 <Link
                                     to={
@@ -29,7 +29,6 @@ const AllCards = ({ allCards }) => {
                                         data?.title.split(" ").join("-")
                                     }
                                     state={{ data: data }}
-                                    key={data?._id}
                                 >
                                     <Card data={data} />
                                 </Link>
@@ -46,7 +45,7 @@ const AllCards = ({ allCards }) => {
                     <div className="flex flex-wrap">
                         {trendyDrops.map((data, id) => {
                             return (
-                                <div className="relative">
+                                <div className="relative" key={data?._id}>
                                     <WishList data={data} />
                                     <Link
                                         to={
@@ -54,7 +53,6 @@ const AllCards = ({ allCards }) => {
                                             data?.title.split(" ").join("-")
                                         }
                                         state={{ data: data }}
-                                        key={data?._id}
                                     >
                                         <Card data={data} />
                                     </Link>

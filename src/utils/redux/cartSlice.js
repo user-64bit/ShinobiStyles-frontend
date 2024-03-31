@@ -14,6 +14,11 @@ const cartSlice = createSlice({
                 (item) => item._id !== action.payload._id
             );
         },
+        updateItem: (state, action) => {
+            state.items = state.items.map((item) =>
+                item._id === action.payload._id ? action.payload : item
+            );
+        },
         // FIXME:Remove Items when create desing for Cart
         clearCart: (state) => {
             state.items = [];
@@ -21,5 +26,6 @@ const cartSlice = createSlice({
     },
 });
 
-export const { addItems, clearCart, removeItem } = cartSlice.actions;
+export const { addItems, clearCart, removeItem, updateItem } =
+    cartSlice.actions;
 export default cartSlice.reducer;

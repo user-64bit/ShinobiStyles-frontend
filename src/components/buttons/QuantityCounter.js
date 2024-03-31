@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const QuantityCounter = ({ setCount, count }) => {
     const handleInputChange = (e) => {
