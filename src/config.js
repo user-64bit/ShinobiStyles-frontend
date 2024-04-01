@@ -9,7 +9,7 @@ export const IMAGES = [
     "https://comicsense.b-cdn.net/storage/2024/01/tees.jpg",
 ];
 
-export const BACKEND_URL = "http://localhost:3001";
+export const BACKEND_URL = "https://shinobi-styles-backend.vercel.app";
 
 export const BACKUP_ARRAY = [
     "a799c3d4e95b3a2f0e4309fc79c789aa3c9b4f7c30735e5b22b68b2458e423dc",

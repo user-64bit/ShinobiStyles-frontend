@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/cards/CartItem";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
     const [total, setTotal] = useState(0);
+    const navigate = useNavigate();
     const cartitems = useSelector((store) => store.cart.items);
+    const user = useSelector((store) => store.user);
     const OFFER = 5000;
 
     let subTotal = 0;
@@ -15,10 +18,20 @@ const Cart = () => {
         setTotal(subTotal);
     });
 
+    const handleCheckUserCheckoutEligibility = () => {
+        if (!user.user) {
+            alert("Please Login to buy your Favorites");
+            navigate("/my-account");
+        }
+        if (!user.userShippingDetails) {
+            navigate("/shippingDetails");
+        }
+    };
+
     return (
         <div className="mt-[14%] w-4/5 mx-auto flex gap-x-5">
             <div className="w-3/5">
-                <table>
+                <table className="w-full">
                     <thead className="border-b-2 border-black">
                         <tr className="">
                             <th className="py-3 text-left" colSpan={2}>
@@ -71,8 +84,8 @@ const Cart = () => {
                                 minutes
                             </p>
                             <p
-                                className={`mt-3${
-                                    OFFER - total <= 0 ? "hidden" : ""
+                                className={`mt-3 ${
+                                    Number(OFFER - total) <= 0 ? "hidden" : ""
                                 }`}
                             >
                                 Add ₹ {(OFFER - total)?.toFixed(2)} more and get
@@ -83,7 +96,10 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="py-5">
-                        <button className="bg-[#5e3fde] py-3 w-full text-white hover:bg-[#ff24aa]">
+                        <button
+                            className="bg-[#5e3fde] py-3 w-full text-white hover:bg-[#ff24aa]"
+                            onClick={() => handleCheckUserCheckoutEligibility()}
+                        >
                             Proceed to Checkout
                         </button>
                     </div>

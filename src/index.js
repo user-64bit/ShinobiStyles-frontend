@@ -13,6 +13,7 @@ import Checkout from "./pages/Checkout";
 import PaymentSuccess from "./components/success/PaymentSuccess";
 import MyAccount from "./pages/MyAccount";
 import Cart from "./pages/Cart";
+import UserShippingDetails from "./components/forms/UserShippingDetails";
 
 const App = () => {
     return (
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />,
+            },
+            {
+                path: "/shippingDetails",
+                element: <UserShippingDetails />,
             },
             {
                 path: "/checkout",
