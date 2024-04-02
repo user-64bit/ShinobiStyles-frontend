@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
-import { BACKEND_URL } from "../config";
 import AddToCart from "../components/buttons/AddToCart";
 import QuantityCounter from "../components/buttons/QuantityCounter";
 import SizeVariants from "../components/buttons/SizeVariants";
@@ -25,51 +23,20 @@ const Product = () => {
         quantity: count ? count : undefined,
         size: selectedSize,
     };
-    const handleCheckout = async (amount) => {
-        const { data } = await axios.get(`${BACKEND_URL}/api/getkey`);
-        const {
-            data: { order },
-        } = await axios.post(`${BACKEND_URL}/api/checkout`, {
-            amount,
-        });
-        var options = {
-            key: data.key,
-            amount: order.amount,
-            currency: "INR",
-            name: "Acme Corp",
-            description: "Test Transaction",
-            image: "https://avatars.githubusercontent.com/u/76396335?v=4",
-            order_id: order.id,
-            callback_url: `${BACKEND_URL}/api/paymentverification`,
-            prefill: {
-                // FIXME: this data will be auto generated from user data (allmost everything in options)
-                name: "Arth Prajapati",
-                email: "arth.prajapati@example.com",
-                contact: "9000090000",
-            },
-            notes: {
-                address: "Razorpay Corporate Office",
-            },
-            theme: {
-                color: "#3399cc",
-            },
-        };
-        var razor = new window.Razorpay(options);
-        razor.open();
-    };
+
     return (
         <>
-            <div className="flex pt-[12%] w-4/5 mx-auto">
-                <div className="mx-4 border w-1/2">
+            <div className="flex md:flex-row flex-col md:true-center md:w-4/5 md:mx-auto p-4">
+                <div className="md:mx-4 md:my-0 my-3 border md:w-1/2">
                     {/* FIXME:Carousel of multiple Images */}
                     <img
                         src={data?.image}
-                        className={`h-[450px] border-b ${
+                        className={`h-[450px] border-b mx-auto ${
                             data?.image == null ? "hidden" : ""
                         }`}
                     />
                 </div>
-                <div className="border w-1/2 px-4">
+                <div className="border md:w-1/2 p-4 md:py-0 w-full">
                     <h1 className="text-3xl font-light">{data?.title}</h1>
                     <h1 className="text-2xl font-bold pt-5 text-[#5e3fde]">
                         ₹ {(data?.price).toFixed(2)}

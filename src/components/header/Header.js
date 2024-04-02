@@ -4,7 +4,7 @@ import {
     DeviconTwitter,
     CibInstagram,
 } from "../icons/Icons";
-import logo from "../../assets/logo2.svg";
+import logo from "../../assets/shinobi.svg";
 import Search from "./search/Search";
 import {
     BxUser,
@@ -19,15 +19,6 @@ import { auth } from "../../utils/firebase";
 import { clearUser } from "../../utils/redux/userSlice";
 import { signOut } from "firebase/auth";
 
-const reverseColour = {
-    WebkitFilter: "grayscale(1) invert(1)",
-    filter: "grayscale(1) invert(1)",
-};
-const shadowPng = {
-    WebkitFilter: "grayscale(1) invert(1) drop-shadow(8px 8x 4px #222)",
-    filter: "grayscale(1) invert(1) drop-shadow(5px 5px 5px #222)",
-};
-
 const Header = () => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
@@ -41,7 +32,7 @@ const Header = () => {
     // console.log(window.location.href);
     return (
         <>
-            <div className="absolute top-0 z-50 w-full">
+            <div className="sticky top-0 z-[100] w-full bg-white">
                 <div className="flex justify-between bg-[#172d3b] p-3">
                     <div className="flex">
                         <a href="https://discord.com" target="_blank">
@@ -62,7 +53,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="bg-black bg-opacity-10">
+                <div className="">
                     <div className="flex justify-between w-4/5 mx-auto text-white items-center">
                         {/* Hamburger Menu */}
                         <div className="w-16">
@@ -71,38 +62,38 @@ const Header = () => {
                         {/* LOGO of Shinoby Style */}
                         <div className="">
                             <Link to="/">
-                                <img
-                                    className="w-72 "
-                                    src={logo}
-                                    alt="Shinobi Styles"
-                                    style={shadowPng}
-                                />
+                                {logo ? (
+                                    <img
+                                        className="w-36"
+                                        src={logo}
+                                        alt="Shinobi Styles"
+                                    />
+                                ) : (
+                                    <p className="font-bold text-2xl text-black">
+                                        Shinobi Styles
+                                    </p>
+                                )}
                             </Link>
                         </div>
                         <div className="flex">
                             <Search />
                             <BytesizeHeart
-                                className="ms-2 cursor-pointer text-2xl"
-                                style={reverseColour}
+                                className="ms-2 cursor-pointer text-3xl"
                                 loveditems={wishlistItems?.length}
                             />
                             <Link to={"/cart"}>
                                 <BytesizeCart
-                                    className="ms-2 cursor-pointer text-2xl"
-                                    style={reverseColour}
+                                    className="ms-2 cursor-pointer text-3xl"
                                     cartitems={cartitems?.length}
                                 />
                             </Link>
                             {user ? (
                                 <button onClick={() => handleLogOut()}>
-                                    <MaterialSymbolsLightLogout className="ms-2 text-2xl" />
+                                    <MaterialSymbolsLightLogout className="ms-2 text-3xl" />
                                 </button>
                             ) : (
                                 <Link to={"/my-account"}>
-                                    <BxUser
-                                        className="ms-2 cursor-pointer text-2xl"
-                                        style={reverseColour}
-                                    />
+                                    <BxUser className="ms-2 cursor-pointer text-3xl" />
                                 </Link>
                             )}
                         </div>

@@ -3,7 +3,9 @@ import React from "react";
 const Checkout = () => {
     return (
         <>
-            <div className="text-3xl m-5">Checking out......</div>
+            <div className="mt-[14%] w-4/5 mx-auto text-3xl">
+                Checking out......
+            </div>
         </>
     );
 };

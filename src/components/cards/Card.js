@@ -1,7 +1,4 @@
 import React from "react";
-import { BytesizeHeart } from "../icons/Icons";
-import { useDispatch } from "react-redux";
-import { addWishlist } from "../../utils/redux/WishlistSlice";
 
 const StarRating = (rating) => {
     let view = [];

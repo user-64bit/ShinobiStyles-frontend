@@ -10,7 +10,7 @@ const MyAccount = () => {
             {user ? (
                 <h1>You're Already Logged in</h1>
             ) : (
-                <div className="flex w-3/4 mx-auto justify-around py-[15%]">
+                <div className="flex flex-col md:flex-row w-3/4 mx-auto justify-around true-center">
                     <LoginForm />
                     <RegisterForm />
                 </div>

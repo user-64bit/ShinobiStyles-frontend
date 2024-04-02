@@ -83,7 +83,9 @@ export const BxUser = (props) => (
         {...props}
     >
         <path
-            fill="#000000"
+            fill="#5e3fde"
+            stroke="#5e3fde"
+            strokeWidth={1}
             d="M12 2a5 5 0 1 0 5 5a5 5 0 0 0-5-5m0 8a3 3 0 1 1 3-3a3 3 0 0 1-3 3m9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"
         ></path>
     </svg>
@@ -108,12 +110,12 @@ export const BytesizeHeart = (props) => (
                 {...props}
             >
                 <path
-                    fill="none"
-                    stroke="#000000"
+                    fill="white"
+                    stroke="#5e3fde"
                     className="group-hover:stroke-red-600"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
+                    strokeWidth="3"
                     d="M4 16C1 12 2 6 7 4s8 2 9 4c1-2 5-6 10-4s5 8 2 12s-12 12-12 12s-9-8-12-12"
                 ></path>
             </svg>
@@ -140,11 +142,11 @@ export const BytesizeCart = (props) => (
                 {...props}
             >
                 <g
-                    fill="none"
-                    stroke="#000000"
+                    fill="currentColor"
+                    stroke="#5e3fde"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth="2"
+                    strokeWidth="3"
                 >
                     <path d="M6 6h24l-3 13H9m18 4H10L5 2H2"></path>
                     <circle cx="25" cy="27" r="2"></circle>
@@ -163,7 +165,9 @@ export const SearchIcon = (props) => (
         {...props}
     >
         <path
-            fill="currentColor"
+            fill="#5e3fde"
+            stroke="#5e3fde"
+            strokeWidth={1}
             d="M8.195 0c4.527 0 8.196 3.62 8.196 8.084a7.989 7.989 0 0 1-1.977 5.267l5.388 5.473a.686.686 0 0 1-.015.98a.71.71 0 0 1-.993-.014l-5.383-5.47a8.23 8.23 0 0 1-5.216 1.849C3.67 16.169 0 12.549 0 8.084C0 3.62 3.67 0 8.195 0Zm0 1.386c-3.75 0-6.79 2.999-6.79 6.698c0 3.7 3.04 6.699 6.79 6.699s6.791-3 6.791-6.699c0-3.7-3.04-6.698-6.79-6.698Z"
         ></path>
     </svg>
@@ -178,7 +182,7 @@ export const PajamasHamburger = (props) => (
         {...props}
     >
         <path
-            fill="currentColor"
+            fill="#5e3fde"
             fillRule="evenodd"
             d="M0 3.75A.75.75 0 0 1 .75 3h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 3.75ZM0 8a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H.75A.75.75 0 0 1 0 8Zm.75 3.5a.75.75 0 0 0 0 1.5h14.5a.75.75 0 0 0 0-1.5H.75Z"
             clipRule="evenodd"
@@ -238,7 +242,7 @@ export const MaterialSymbolsLightLogout = (props) => (
         {...props}
     >
         <path
-            fill="currentColor"
+            fill="#5e3fde"
             d="M5.615 20q-.69 0-1.152-.462Q4 19.075 4 18.385V5.615q0-.69.463-1.152Q4.925 4 5.615 4h6.404v1H5.615q-.23 0-.423.192Q5 5.385 5 5.615v12.77q0 .23.192.423q.193.192.423.192h6.404v1H5.615Zm10.847-4.462l-.702-.719l2.319-2.319H9.192v-1h8.887l-2.32-2.32l.703-.718L20 12l-3.538 3.538Z"
         ></path>
     </svg>
@@ -253,7 +257,7 @@ export const MakiCross = (props) => (
         {...props}
     >
         <path
-            fill="currentColor"
+            fill="#5e3fde"
             d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"
         ></path>
     </svg>

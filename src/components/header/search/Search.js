@@ -26,7 +26,7 @@ const Search = ({}) => {
             <div className="h-4">
                 {/* FIXME: Design it good */}
                 <SearchIcon
-                    className="cursor-pointer text-2xl"
+                    className="cursor-pointer text-3xl"
                     onClick={() => {
                         setIsActiveInput(!isActiveInput);
                         setSearchText("");
@@ -50,13 +50,11 @@ const Search = ({}) => {
                                     className="px-3 w-[200px] h-full flex text-black bg-white border-b-2"
                                     key={card._id}
                                 >
-                                    <img
-                                        src={
-                                            card?.image
-                                                ? card?.image
-                                                : deafultImage
-                                        }
-                                    />
+                                    {card?.image ? (
+                                        <img src={card?.image} />
+                                    ) : (
+                                        <img src={deafultImage} />
+                                    )}
                                     <p>{card.title}</p>
                                 </div>
                             );

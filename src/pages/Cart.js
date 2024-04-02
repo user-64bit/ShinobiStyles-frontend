@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/cards/CartItem";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { BACKEND_URL } from "../config";
 
 const Cart = () => {
     const [total, setTotal] = useState(0);
@@ -22,14 +24,54 @@ const Cart = () => {
         if (!user.user) {
             alert("Please Login to buy your Favorites");
             navigate("/my-account");
-        }
-        if (!user.userShippingDetails) {
+        } else if (!user.userShippingDetails) {
+            alert("Please Fill Some Details...");
             navigate("/shippingDetails");
+        } else {
+            const handleCheckout = async (amount) => {
+                const { data } = await axios.get(`${BACKEND_URL}/api/getkey`);
+                const {
+                    data: { order },
+                } = await axios.post(`${BACKEND_URL}/api/checkout`, {
+                    amount,
+                });
+                var options = {
+                    key: data.key,
+                    amount: order.amount,
+                    currency: "INR",
+                    name: "Acme Corp",
+                    description: "Test Transaction",
+                    image: "https://avatars.githubusercontent.com/u/76396335?v=4",
+                    order_id: order.id,
+                    callback_url: `${BACKEND_URL}/api/paymentverification`,
+                    prefill: {
+                        // FIXME: this data will be auto generated from user data (allmost everything in options)
+                        name: "Arth Prajapati",
+                        email: "arth.prajapati@example.com",
+                        contact: "9000090000",
+                    },
+                    notes: {
+                        address: "Razorpay Corporate Office",
+                    },
+                    theme: {
+                        color: "#3399cc",
+                    },
+                };
+                var razor = new window.Razorpay(options);
+                razor.open();
+            };
+            try {
+                handleCheckout(total);
+            } catch (e) {
+                console.log(e.response.data);
+            } finally {
+                navigate("/checkout");
+            }
         }
     };
 
     return (
-        <div className="mt-[14%] w-4/5 mx-auto flex gap-x-5">
+        <div className="mt-10 md:w-4/5 mx-auto flex lg:flex-row flex-col gap-x-5">
             <div className="w-3/5">
                 <table className="w-full">
                     <thead className="border-b-2 border-black">

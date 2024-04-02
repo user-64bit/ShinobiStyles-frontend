@@ -2,6 +2,26 @@ import { Formik, Field, Form, useFormikContext, useField } from "formik";
 import React, { useEffect, useState } from "react";
 import { InputBoxCSS } from "../../config";
 import { Country, State, City } from "country-state-city";
+import { useDispatch } from "react-redux";
+import * as Yup from "yup";
+import { setUserShippingDetails } from "../../utils/redux/userSlice";
+import { useNavigate } from "react-router-dom";
+
+// Validation
+const userDetailsSchema = Yup.object().shape({
+    email: Yup.string()
+        .min(2, "Too Short!")
+        .max(50, "Too Long!")
+        .required("Required!!"),
+    phone: Yup.number().required("Required!!").positive().integer(),
+    firstName: Yup.string().required("Required!!"),
+    lastName: Yup.string().required("Required!!"),
+    street: Yup.string().required("Required!!"),
+    country: Yup.string().required("Required!!"),
+    state: Yup.string().required("Required!!"),
+    city: Yup.string().required("Required!!"),
+});
+
 const StateField = (props) => {
     const {
         values: { country },
@@ -44,7 +64,6 @@ const CityField = (props) => {
         state,
         touched.state,
     ]);
-    console.log(cities);
     return (
         <Field as="select" {...props} {...field} className={InputBoxCSS}>
             <option value="">Select a city</option>
@@ -60,6 +79,8 @@ const CityField = (props) => {
 };
 
 const UserShippingDetails = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const initialValues = {
         email: "",
         phone: "",
@@ -76,10 +97,26 @@ const UserShippingDetails = () => {
     return (
         <Formik
             initialValues={initialValues}
-            onSubmit={async (values) => alert(JSON.stringify(values, null, 2))}
+            onSubmit={(values) => {
+                dispatch(
+                    setUserShippingDetails({
+                        firstName: values.firstName,
+                        lastName: values.lastName,
+                        email: values.email,
+                        phone: values.phone,
+                        country: values.country,
+                        state: values.state,
+                        city: values.city,
+                        street: values.street,
+                        zip: values.zip,
+                    })
+                );
+                navigate("/");
+            }}
+            validationSchema={userDetailsSchema}
         >
-            {(props) => (
-                <Form className="w-3/5 mx-auto mt-[12%]">
+            {({ errors, touched, isSubmitting }) => (
+                <Form className="w-3/5 mx-auto">
                     <div className="col-span-full mt-2">
                         <label
                             htmlFor="email"
@@ -94,6 +131,11 @@ const UserShippingDetails = () => {
                                 type="email"
                                 className={InputBoxCSS}
                             />
+                            {errors.email && touched.email ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.email}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <div className="col-span-full mt-2">
@@ -110,6 +152,11 @@ const UserShippingDetails = () => {
                                 type="phone"
                                 className={InputBoxCSS}
                             />
+                            {errors.phone && touched.phone ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.phone}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <div className="flex">
@@ -127,6 +174,11 @@ const UserShippingDetails = () => {
                                     type="text"
                                     className={InputBoxCSS}
                                 />
+                                {errors.firstName && touched.firstName ? (
+                                    <div className="text-red-500 pt-1">
+                                        {errors.firstName}
+                                    </div>
+                                ) : null}
                             </div>
                         </div>
                         <div className="w-1/2 mt-2 ps-3">
@@ -143,6 +195,11 @@ const UserShippingDetails = () => {
                                     type="text"
                                     className={InputBoxCSS}
                                 />
+                                {errors.lastName && touched.lastName ? (
+                                    <div className="text-red-500 pt-1">
+                                        {errors.lastName}
+                                    </div>
+                                ) : null}
                             </div>
                         </div>
                     </div>
@@ -172,6 +229,11 @@ const UserShippingDetails = () => {
                                     );
                                 })}
                             </Field>
+                            {errors.country && touched.country ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.country}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <div className="col-span-full mt-2">
@@ -188,6 +250,11 @@ const UserShippingDetails = () => {
                                 type="text"
                                 className={InputBoxCSS}
                             />
+                            {errors.street && touched.street ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.street}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <div className="col-span-full mt-2">
@@ -199,6 +266,11 @@ const UserShippingDetails = () => {
                         </label>
                         <div className="">
                             <StateField name="state" />
+                            {errors.state && touched.state ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.state}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <div className="col-span-full mt-2">
@@ -210,11 +282,17 @@ const UserShippingDetails = () => {
                         </label>
                         <div className="">
                             <CityField name="city" />
+                            {errors.city && touched.city ? (
+                                <div className="text-red-500 pt-1">
+                                    {errors.city}
+                                </div>
+                            ) : null}
                         </div>
                     </div>
                     <button
-                        className="mt-4 py-2 px-3 my-3 border bg-[#172d3b] text-white rounded-md hover:bg-[#29b7ff] transition-all ease-in-out w-full"
+                        className="mt-4 py-2 px-3 my-3 border bg-[#172d3b] text-white rounded-md  w-full"
                         type="submit"
+                        disabled={isSubmitting}
                     >
                         Submit
                     </button>
