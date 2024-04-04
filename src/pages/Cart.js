@@ -3,8 +3,38 @@ import { useSelector } from "react-redux";
 import CartItem from "../components/cards/CartItem";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { BACKEND_URL } from "../config";
+import { REACT_APP_BACKEND_URL } from "../config";
 
+const handleCheckout = async (billed_amount, user) => {
+    const {
+        data: { order_id, currency, amount },
+    } = await axios.post(`${REACT_APP_BACKEND_URL}/api/checkout`, {
+        billed_amount,
+    });
+    var options = {
+        key: process.env.REACT_APP_RAZORPAY_API_KEY,
+        amount: amount,
+        currency: currency,
+        name: "Shinobi Styles",
+        description: "The Best Clothing Site",
+        image: "https://avatars.githubusercontent.com/u/76396335?v=4",
+        order_id: order_id,
+        callback_url: `${REACT_APP_BACKEND_URL}/api/paymentverification`,
+        prefill: {
+            name: user.user?.name || "No Name",
+            email: user.user?.email,
+            contact: user.user?.contact || "No Contact",
+        },
+        notes: {
+            address: "Razorpay Corporate Office",
+        },
+        theme: {
+            color: "#3399cc",
+        },
+    };
+    var razor = new window.Razorpay(options);
+    razor.open();
+};
 const Cart = () => {
     const [total, setTotal] = useState(0);
     const navigate = useNavigate();
@@ -20,7 +50,7 @@ const Cart = () => {
         setTotal(subTotal);
     });
 
-    const handleCheckUserCheckoutEligibility = () => {
+    const handleCheckUserCheckoutEligibility = async () => {
         if (!user.user) {
             alert("Please Login to buy your Favorites");
             navigate("/my-account");
@@ -28,40 +58,8 @@ const Cart = () => {
             alert("Please Fill Some Details...");
             navigate("/shippingDetails");
         } else {
-            const handleCheckout = async (amount) => {
-                const { data } = await axios.get(`${BACKEND_URL}/api/getkey`);
-                const {
-                    data: { order },
-                } = await axios.post(`${BACKEND_URL}/api/checkout`, {
-                    amount,
-                });
-                var options = {
-                    key: data.key,
-                    amount: order.amount,
-                    currency: "INR",
-                    name: "Acme Corp",
-                    description: "Test Transaction",
-                    image: "https://avatars.githubusercontent.com/u/76396335?v=4",
-                    order_id: order.id,
-                    callback_url: `${BACKEND_URL}/api/paymentverification`,
-                    prefill: {
-                        // FIXME: this data will be auto generated from user data (allmost everything in options)
-                        name: "Arth Prajapati",
-                        email: "arth.prajapati@example.com",
-                        contact: "9000090000",
-                    },
-                    notes: {
-                        address: "Razorpay Corporate Office",
-                    },
-                    theme: {
-                        color: "#3399cc",
-                    },
-                };
-                var razor = new window.Razorpay(options);
-                razor.open();
-            };
             try {
-                handleCheckout(total);
+                await handleCheckout(total, user);
             } catch (e) {
                 console.log(e.response.data);
             } finally {

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AllCards from "../components/cards/AllCards";
 import CardShimmer from "../utils/CardShimmer";
 import Carousel from "../components/header/carousel/Carousel";
-import { BACKEND_URL, IMAGES } from "../config";
+import { REACT_APP_BACKEND_URL, IMAGES } from "../config";
 import { useDispatch } from "react-redux";
 import { addCards } from "../utils/redux/cardSlice";
 
@@ -21,7 +21,9 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`${BACKEND_URL}/products`);
+                const response = await fetch(
+                    `${REACT_APP_BACKEND_URL}/products`
+                );
                 const data = await response.json();
                 // console.log(data);
                 setAllCards(data);

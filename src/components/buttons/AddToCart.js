@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addItems, updateItem } from "../../utils/redux/cartSlice";
 import { CheckIfExists } from "../../utils/helper";
-import { BACKEND_URL } from "../../config";
+import { REACT_APP_BACKEND_URL } from "../../config";
 const AddToCart = ({ data, selectedSize }) => {
     const dispatch = useDispatch();
     const [productId, setProductId] = useState("");
@@ -17,7 +17,7 @@ const AddToCart = ({ data, selectedSize }) => {
         try {
             const {
                 data: { productId },
-            } = await axios.post(`${BACKEND_URL}/product_id`, {
+            } = await axios.post(`${REACT_APP_BACKEND_URL}/product_id`, {
                 title,
             });
             setProductId(productId);

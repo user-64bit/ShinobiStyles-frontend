@@ -62,7 +62,7 @@ const Card = ({ data }) => {
                     }`}
                 >
                     <span className="text-sm font-semibold text-gray-900">
-                        ₹ {(data?.price).toFixed(2)}
+                        ₹ {data?.price?.toFixed(2)}
                     </span>
                 </div>
             </div>

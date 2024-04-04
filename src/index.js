@@ -14,6 +14,7 @@ import PaymentSuccess from "./components/success/PaymentSuccess";
 import MyAccount from "./pages/MyAccount";
 import Cart from "./pages/Cart";
 import UserShippingDetails from "./components/forms/UserShippingDetails";
+import WishList from "./pages/WishList";
 
 const App = () => {
     return (
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: "/cart",
                 element: <Cart />,
+            },
+            {
+                path: "/wishlist",
+                element: <WishList />,
             },
             {
                 path: "/shippingDetails",

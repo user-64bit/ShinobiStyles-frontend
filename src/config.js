@@ -9,7 +9,7 @@ export const IMAGES = [
     "https://comicsense.b-cdn.net/storage/2024/01/tees.jpg",
 ];
 
-export const BACKEND_URL = "https://shinobi-styles-backend.vercel.app";
+export const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 export const BACKUP_ARRAY = [
     "a799c3d4e95b3a2f0e4309fc79c789aa3c9b4f7c30735e5b22b68b2458e423dc",
@@ -32,5 +32,6 @@ export const BACKUP_ARRAY = [
     "e75c62dbb1ef2fe16bda39a0b487648a0bce4bb933f2d77a8f3664a8b7b6b7da",
 ];
 
-export const InputBoxCSS =
-    "block w-full rounded-lg border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2";
+export const InputBoxCSS = `block w-full rounded-lg border-0 py-1.5 text-gray-900 shadow-sm ring-1 
+    ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 
+    focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2`;

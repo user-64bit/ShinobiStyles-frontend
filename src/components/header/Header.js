@@ -18,18 +18,27 @@ import HamburgureMenu from "./HamburgureMenu";
 import { auth } from "../../utils/firebase";
 import { clearUser } from "../../utils/redux/userSlice";
 import { signOut } from "firebase/auth";
-
+import { useNavigate } from "react-router-dom";
 const Header = () => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
     const user = useSelector((store) => store.user.user);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleLogOut = () => {
         signOut(auth).then(() => {
             dispatch(clearUser());
         });
     };
-    // console.log(window.location.href);
+    const handleOnClickWishlist = () => {
+        if (user) {
+            navigate("/wishlist");
+            return;
+        } else {
+            navigate("/my-account");
+            return;
+        }
+    };
     return (
         <>
             <div className="sticky top-0 z-[100] w-full bg-white">
@@ -60,11 +69,11 @@ const Header = () => {
                             <HamburgureMenu />
                         </div>
                         {/* LOGO of Shinoby Style */}
-                        <div className="">
+                        <div className="w-36">
                             <Link to="/">
                                 {logo ? (
                                     <img
-                                        className="w-36"
+                                        className="w-full"
                                         src={logo}
                                         alt="Shinobi Styles"
                                     />
@@ -80,6 +89,7 @@ const Header = () => {
                             <BytesizeHeart
                                 className="ms-2 cursor-pointer text-3xl"
                                 loveditems={wishlistItems?.length}
+                                onClick={() => handleOnClickWishlist()}
                             />
                             <Link to={"/cart"}>
                                 <BytesizeCart
