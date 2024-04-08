@@ -27,14 +27,30 @@ const WishList = () => {
                         <tr className="">
                             <td className="w-3/5 border" colSpan={2}>
                                 <div className="flex items-center gap-x-10 w-full p-2">
-                                    <img
-                                        src={item?.image}
-                                        className="w-36 object-cover"
-                                    />
+                                    <Link
+                                        to={
+                                            "/products/" +
+                                            item?.title.split(" ").join("-")
+                                        }
+                                        state={{ data: item }}
+                                    >
+                                        <img
+                                            src={item?.image}
+                                            className="w-36 object-cover hover:opacity-80"
+                                        />
+                                    </Link>
                                     <div className="font-bold">
-                                        <p className="text-gray-900">
-                                            {item?.title}
-                                        </p>
+                                        <Link
+                                            to={
+                                                "/products/" +
+                                                item?.title.split(" ").join("-")
+                                            }
+                                            state={{ data: item }}
+                                        >
+                                            <p className="text-gray-900 hover:text-[#5e3fde]">
+                                                {item?.title}
+                                            </p>
+                                        </Link>
                                         <p className="text-gray-900">
                                             RS. {item?.price?.toFixed(2)}
                                         </p>

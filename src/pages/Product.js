@@ -63,14 +63,6 @@ const Product = () => {
                         <WishListBtn data={data} />
                     </div>
                 </div>
-
-                {/* will move this whole functionality to Checkout page which will be linked in Cart section */}
-                {/* <Link to={"/checkout"}>
-                    <BytesizeCart
-                        className="mx-4 cursor-pointer"
-                        onClick={() => handleCheckout(data?.price)}
-                    />
-                </Link> */}
             </div>
         </>
     );

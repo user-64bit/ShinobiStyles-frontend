@@ -12,5 +12,9 @@ export const theme = {
             slider: "infitineSlide 20s linear infinite",
         },
     },
+    darkMode: "class",
+    theme: {
+        extend: {},
+    },
 };
 export const plugins = [];
