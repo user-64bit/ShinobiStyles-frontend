@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     AkarIconsDiscordFill,
     DeviconTwitter,
     CibInstagram,
+    PajamasHamburger,
 } from "../icons/Icons";
 import logo from "../../assets/shinobi.svg";
 import Search from "./search/Search";
@@ -14,15 +15,16 @@ import {
 } from "../icons/Icons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import HamburgureMenu from "./HamburgureMenu";
 import { auth } from "../../utils/firebase";
 import { clearUser } from "../../utils/redux/userSlice";
 import { signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import Sidebar from "./Sidebar";
 const Header = () => {
     const cartitems = useSelector((store) => store.cart.items);
     const wishlistItems = useSelector((store) => store.wishlist.items);
     const user = useSelector((store) => store.user.user);
+    const [hamburger, setHamburger] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const handleLogOut = () => {
@@ -63,17 +65,30 @@ const Header = () => {
                 </div>
 
                 <div className="">
-                    <div className="flex justify-between w-4/5 mx-auto text-white items-center">
+                    <div className="flex justify-between md:w-4/5 mx-auto text-white items-center">
                         {/* Hamburger Menu */}
                         <div className="w-16">
-                            <HamburgureMenu />
+                            <div className="p-2 text-4xl">
+                                {hamburger ? (
+                                    <Sidebar
+                                        setHamburger={setHamburger}
+                                        hamburger={hamburger}
+                                    />
+                                ) : (
+                                    <button
+                                        onClick={() => setHamburger(!hamburger)}
+                                    >
+                                        <PajamasHamburger />
+                                    </button>
+                                )}
+                            </div>
                         </div>
                         {/* LOGO of Shinoby Style */}
-                        <div className="w-36">
+                        <div className="hidden sm:block md:w-36 sm:w-24">
                             <Link to="/">
                                 {logo ? (
                                     <img
-                                        className="w-full"
+                                        className="md:w-full sm:w-24"
                                         src={logo}
                                         alt="Shinobi Styles"
                                     />

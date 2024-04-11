@@ -18,12 +18,12 @@ const QuantityCounter = ({ setCount, count }) => {
                     setCount((count) => (count - 1 < 1 ? 1 : count - 1))
                 }
             >
-                <span className="px-2 py-1 rounded-md hover:bg-[#5e3fde] hover:text-white ease-in-out transition-all">
+                <span className="md:px-2 md:py-1 rounded-md hover:bg-[#5e3fde] hover:text-white ease-in-out transition-all">
                     -
                 </span>
             </button>
             <input
-                className="w-10 text-center outline-none"
+                className="md:w-10 w-4 text-center outline-none"
                 type="number"
                 value={count}
                 onChange={handleInputChange}
@@ -32,7 +32,7 @@ const QuantityCounter = ({ setCount, count }) => {
                 className="py-3 px-4"
                 onClick={() => setCount((count) => count + 1)}
             >
-                <span className="px-2 py-1 rounded-md hover:bg-[#5e3fde] hover:text-white ease-in-out transition-all">
+                <span className="md:px-2 md:py-1 rounded-md hover:bg-[#5e3fde] hover:text-white ease-in-out transition-all">
                     +
                 </span>
             </button>

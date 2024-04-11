@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { RiArrowLeftWideLine, RiArrowRightWideLine } from "../../icons/Icons";
 
 const Carousel = ({ IMAGES }) => {
@@ -25,14 +25,14 @@ const Carousel = ({ IMAGES }) => {
                     <RiArrowLeftWideLine />
                 </button>
 
-                <div className="overflow-x-scroll no-scrollbar bg-gray-300 rounded shadow-md pt-[11%] md:p-0">
+                <div className="overflow-x-scroll no-scrollbar bg-gray-300 rounded shadow-md pt-0 md:p-0">
                     <div className="flex">
                         {IMAGES.map((image, i) => (
                             <img
                                 key={i}
                                 src={image}
                                 alt="Image 1"
-                                className={`w-[350px] object-cover lg:w-[500px]`}
+                                className={`w-[350px] object-cover md:w-[500px]`}
                             />
                         ))}
                     </div>

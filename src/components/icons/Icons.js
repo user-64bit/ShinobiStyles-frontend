@@ -324,3 +324,52 @@ export const BytesizeUpload = (props) => (
         ></path>
     </svg>
 );
+
+export const GridiconsCross = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M18.36 19.78L12 13.41l-6.36 6.37l-1.42-1.42L10.59 12L4.22 5.64l1.42-1.42L12 10.59l6.36-6.36l1.41 1.41L13.41 12l6.36 6.36z"
+        ></path>
+    </svg>
+);
+
+export const TablerPlus = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M12 5v14m-7-7h14"
+        ></path>
+    </svg>
+);
+
+export const MaterialSymbolsLightAccountCircle = (props) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+        {...props}
+    >
+        <path
+            fill="currentColor"
+            d="M6.196 17.485q1.275-.918 2.706-1.451Q10.332 15.5 12 15.5q1.667 0 3.098.534q1.43.533 2.706 1.45q.99-1.024 1.593-2.42Q20 13.666 20 12q0-3.325-2.337-5.663T12 4Q8.675 4 6.337 6.337T4 12q0 1.667.603 3.063q.603 1.397 1.593 2.422ZM12 12.5q-1.263 0-2.132-.868Q9 10.763 9 9.5q0-1.263.868-2.132Q10.737 6.5 12 6.5q1.263 0 2.132.868Q15 8.237 15 9.5q0 1.263-.868 2.132q-.869.868-2.132.868Zm0 8.5q-1.883 0-3.525-.701q-1.642-.7-2.858-1.916q-1.215-1.216-1.916-2.858Q3 13.883 3 12t.701-3.525q.7-1.642 1.916-2.858q1.216-1.215 2.858-1.916Q10.117 3 12 3t3.525.701q1.642.7 2.858 1.916q1.215 1.216 1.916 2.858Q21 10.117 21 12t-.701 3.525q-.7 1.642-1.916 2.858q-1.216 1.215-2.858 1.916Q13.883 21 12 21Z"
+        ></path>
+    </svg>
+);

@@ -34,7 +34,7 @@ const Search = ({}) => {
                 />
                 {isActiveInput && (
                     <input
-                        className="absolute w-[300px] py-1 px-3 mt-1 focus:outline-none focus:shadow-outline text-lg text-black bg-gray-200"
+                        className="absolute w-36 md:w-[300px] py-1 px-3 mt-1 focus:outline-none focus:shadow-outline text-lg text-black bg-gray-200"
                         type="text"
                         placeholder="Search..."
                         onChange={(e) => setSearchText(e.target.value)}

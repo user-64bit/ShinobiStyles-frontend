@@ -48,7 +48,7 @@ const Cart = () => {
             subTotal += item.price * item.quantity;
         });
         setTotal(subTotal);
-    });
+    }, [subTotal]);
 
     const handleCheckUserCheckoutEligibility = async () => {
         if (!user.user) {
@@ -69,18 +69,22 @@ const Cart = () => {
     };
 
     return (
-        <div className="mt-10 md:w-4/5 mx-auto flex lg:flex-row flex-col gap-x-5">
-            <div className="w-3/5">
+        <div className="mt-10 md:w-4/5 mx-auto flex md:flex-row flex-col gap-x-5">
+            <div className="md:w-3/5">
                 <table className="w-full">
                     <thead className="border-b-2 border-black">
                         <tr className="">
                             <th className="py-3 text-left" colSpan={2}>
                                 Product
                             </th>
-                            <th className="py-3">Quantity</th>
-                            <th className="py-3">SubTotal</th>
-                            <th className="py-3"></th>
-                            <th className="py-3"></th>
+                            <th className="py-3 hidden md:table-cell">
+                                Quantity
+                            </th>
+                            <th className="py-3 hidden md:table-cell">
+                                SubTotal
+                            </th>
+                            <th className="py-3 hidden md:table-cell"></th>
+                            <th className="py-3 hidden md:table-cell"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +94,11 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
-            <div className="border w-2/5">
+            <div
+                className={`md:mt-0 mt-10 border md:w-2/5 ${
+                    total !== 0 ? "block" : "hidden"
+                } md:block`}
+            >
                 <div className="p-8">
                     <div className="border-b-2 border-dotted pb-5">
                         <h1 className="uppercase font-extrabold mb-4">

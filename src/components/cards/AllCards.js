@@ -1,24 +1,26 @@
 import React, { useState } from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
-import { BytesizeHeart } from "../icons/Icons";
 import WishList from "../buttons/WishList";
+import { useNavigate } from "react-router-dom";
 
 const AllCards = ({ allCards }) => {
     const latestDrops = allCards.slice(0, 6);
+    const navigate = useNavigate();
     const [trendyDrops, setTrendyDrops] = useState(
         allCards?.slice(0, 6) == null ? [] : allCards?.slice(0, 6)
     );
     const showAllCards = () => {
         // FIXME: redirect to `/products/trendy-drops/` and show all cards
-        setTrendyDrops(allCards);
+        // setTrendyDrops(allCards);
+        navigate("/products/trendy-drops/");
     };
     return (
         <>
             <div className="flex flex-col items-center justify-center mt-20">
                 {/* FIXME: Decide some logic to put Data in Latest Drops categories */}
                 <h1 className="pb-8 text-4xl font-bold">LATEST DROPS</h1>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap justify-center">
                     {latestDrops.map((data, id) => {
                         return (
                             <div className="relative" key={data?._id}>
@@ -42,7 +44,7 @@ const AllCards = ({ allCards }) => {
                     Trendi Winter Gears
                 </h1>
                 <div className="flex flex-col items-center">
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap justify-center">
                         {trendyDrops.map((data, id) => {
                             return (
                                 <div className="relative" key={data?._id}>
