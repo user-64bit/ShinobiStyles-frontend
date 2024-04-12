@@ -61,7 +61,7 @@ const Cart = () => {
             try {
                 await handleCheckout(total, user);
             } catch (e) {
-                console.log(e.response.data);
+                console.log("cathing in error");
             } finally {
                 navigate("/checkout");
             }

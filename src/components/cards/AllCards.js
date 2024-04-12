@@ -3,13 +3,16 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 import WishList from "../buttons/WishList";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const AllCards = ({ allCards }) => {
-    const latestDrops = allCards.slice(0, 6);
+    const wishListItems = useSelector((store) => store.wishlist.items);
+    console.log(wishListItems);
     const navigate = useNavigate();
     const [trendyDrops, setTrendyDrops] = useState(
         allCards?.slice(0, 6) == null ? [] : allCards?.slice(0, 6)
     );
+    const latestDrops = allCards.slice(0, 6);
     const showAllCards = () => {
         // FIXME: redirect to `/products/trendy-drops/` and show all cards
         // setTrendyDrops(allCards);
@@ -24,13 +27,18 @@ const AllCards = ({ allCards }) => {
                     {latestDrops.map((data, id) => {
                         return (
                             <div className="relative" key={data?._id}>
-                                <WishList data={data} />
+                                <WishList
+                                    data={data}
+                                    defaultValue={wishListItems.includes(data)}
+                                />
                                 <Link
                                     to={
                                         "/products/" +
                                         data?.title.split(" ").join("-")
                                     }
-                                    state={{ data: data }}
+                                    state={{
+                                        data: data,
+                                    }}
                                 >
                                     <Card data={data} />
                                 </Link>

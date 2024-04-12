@@ -3,16 +3,16 @@ import { useDispatch } from "react-redux";
 import { addWishlist, removeWish } from "../../utils/redux/WishlistSlice";
 import { BytesizeHeart, IlHeart } from "../icons/Icons";
 
-const WishList = ({ data }) => {
-    const [isInWishList, setIsInWishList] = useState(false);
+const WishList = ({ data, defaultValue }) => {
+    const [isInWishList, setIsInWishList] = useState(defaultValue);
     const dispatch = useDispatch();
     const handleOnClickWishlist = () => {
         dispatch(addWishlist(data));
-        setIsInWishList(!isInWishList);
+        setIsInWishList(true);
     };
     const handleOnClickRemoveWishList = () => {
         dispatch(removeWish(data));
-        setIsInWishList(!isInWishList);
+        setIsInWishList(false);
     };
     return (
         <button className="z-50 top-4 right-4 absolute">

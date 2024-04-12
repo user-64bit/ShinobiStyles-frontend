@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { IlHeart, LaHeart } from "../icons/Icons";
 import { useDispatch } from "react-redux";
 import { addWishlist, removeWish } from "../../utils/redux/WishlistSlice";
+import { useSelector } from "react-redux";
 
 const WishListBtn = ({ data }) => {
-    const [isInWishList, setIsInWishList] = useState(false);
+    const wishListItems = useSelector((store) => store.wishlist.items);
+    const [isInWishList, setIsInWishList] = useState(
+        true ? wishListItems.includes(data) : false
+    );
     const dispatch = useDispatch();
     const handleOnClickWishlist = () => {
         dispatch(addWishlist(data));
